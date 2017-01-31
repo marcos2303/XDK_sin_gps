@@ -1,0 +1,85 @@
+.centerDiv {
+    position: relative;
+    left: 50%;
+}
+
+.imgFalla {
+    position: relative;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: url('images/Botones/encender/encender.svg') no-repeat;
+    background-position: 0px 0px;
+}
+
+.imgFalla:hover {
+    background-position: -65px 0px;
+}
+
+.imgVolante {
+    position: relative;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: url(images/Botones/volante/volante.svg) no-repeat;
+    background-position: 0px 0px;
+}
+
+.imgVolante:hover {
+    background-position: -65px 0px;
+}
+
+.imgCuneta {
+    position: relative;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: url(images/Botones/cuneta/cuneta.svg) no-repeat;
+    background-position: 0px 0px;
+}
+
+.imgCuneta:hover {
+    background-position: -65px 0px;
+}
+
+.imgNeumatico {
+    position: relative;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: url(images/Botones/neumatico/neumatico.svg) no-repeat;
+    background-position: 0px 0px;
+}
+
+.imgNeumatico:hover {
+    background-position: -65px 0px;
+}
+
+.imgOtra {
+    position: relative;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: url(images/Botones/otra/otra.svg) no-repeat;
+    background-position: 0px 0px;
+
+}
+
+.imgOtra:hover {
+    background-position: -65px 0px;
+}
+
+.imgChoque {
+    position: relative;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: url(images/Botones/choque/choque.svg) no-repeat; 
+        background-position: 0px 0px;
+
+}
+
+.imgChoque:hover {
+    background-position: -65px 0px;
+
+}

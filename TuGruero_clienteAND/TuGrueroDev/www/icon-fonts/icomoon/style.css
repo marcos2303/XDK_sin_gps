@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?lx7kdg');
+    src:    url('fonts/icomoon.eot?lx7kdg#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?lx7kdg') format('truetype'),
+        url('fonts/icomoon.woff?lx7kdg') format('woff'),
+        url('fonts/icomoon.svg?lx7kdg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-falla:before {
+    content: "\e904";
+}
+.icon-choque:before {
+    content: "\e905";
+}
+.icon-traslado:before {
+    content: "\e906";
+}
+.icon-hueco:before {
+    content: "\e907";
+}
+.icon-ubicacion:before {
+    content: "\e908";
+	position: relative;
+	left: -4px;
+	font-size: 24px;
+}
+.icon-opcion:before {
+    content: "\e909";
+		position: relative;
+	top: -4px;
+	margin-right: 8px;
+	font-size: 24px;
+	color: rgb(255, 255, 255);
+}
+.icon-seleccionado:before {
+    content: "\e90a";
+		position: relative;
+	top: -4px;
+	margin-right: 8px;
+	font-size: 24px;
+	color: rgb(240, 119, 48);
+}
+.icon-mostrar:before {
+    content: "\e90b";
+		font-size: 12px;
+}
+.icon-back:before {
+    content: "\e90c";
+		font-size: 18px;
+}
+.icon-siguiente:before {
+    content: "\e90d";
+		font-size: 10px;
+}
+.icon-menu:before {
+    content: "\e90e";
+		font-size: 24px;
+}
+.icon-callcenter:before {
+    content: "\e90f";
+		font-size: 24px;
+}
+
+.icon-neumatico:before {
+	content: "\e910";
+}
+
+.icon-rueda:before {
+	content: "\e910";
+	font-size: 31px;
+	color: rgb(240, 119, 48);
+}
+
+.icon-norueda:before {
+	content: "\e910";
+	font-size: 31px;
+	color: rgba(255, 255, 255, 0.1);
+}
+
+
+.icon-carro:before {
+    content: "\e911";
+}
+.icon-grua:before {
+    content: "\e912";
+}
+.icon-sinconexion:before {
+    content: "\e913";
+}
+.icon-error:before {
+    content: "\e914";
+}
+.icon-problema:before {
+    content: "\e901";
+}
+.icon-stop:before {
+    content: "\e900";
+}
+.icon-alto:before {
+    content: "\e902";
+}
+.icon-encunetado:before {
+    content: "\e903";
+}
+.icon-otra-falla:before {
+    content: "\e91c";
+}
+.icon-keys:before {
+    content: "\e916";
+}
+.icon-llamar:before {
+    content: "\e917";
+	position: relative;
+	top: 5px;
+}
+
+.icon-llamar2:before {
+    content: "\e917";
+}
+
+.icon-ocultar:before {
+    content: "\e918";
+		font-size: 12px;
+}
+.icon-star:before {
+    content: "\e919";
+}
+.icon-star-empty:before {
+    content: "\e91a";
+}
+.icon-centrar:before {
+    content: "\e91b";
+}
+.icon-encender:before {
+    content: "\e915";
+}
+

@@ -1,0 +1,216 @@
+/*
+ * Please see the included README.md file for license terms and conditions.
+ */
+
+
+/* This file is completely optional and not required. */
+/* Note the reference that includes it in the index.html file. */
+
+
+/* Disable certain interactions on touch devices */
+/* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
+/* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
+body {
+    -webkit-touch-callout: none ;
+    -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
+    -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;
+    -webkit-highlight: none ;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) ;
+    -webkit-tap-highlight-color: transparent ;      /* For some Androids */
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+html {
+    -ms-touch-action: pan-x ;
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+body {
+    -ms-touch-action: pan-y ;
+    -ms-content-zooming: none ;
+}
+
+/* allow copy-paste */
+input, textarea  {
+    -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
+}
+
+body {
+    /* margin: 0.5rem ; */
+    background: white ;
+    color: black ;
+}
+
+.btn-inicio {
+  color: white;
+  background-color: transparent;
+  border-color: white;
+	border-width: 2px;
+}
+
+.btn-inicio:focus{
+	color: white;
+	background-color: transparent;
+	border-color: white;
+	border-width: 3px;
+}
+
+.btn-inicio:hover
+{
+  color: white;
+  background-color: rgba(240,190,50,0.3);
+  border-color: white;	
+  border-width: 3px;
+}
+
+.btn-inicio:active,
+.btn-inicio.active,
+.open > .dropdown-toggle.btn-inicio {
+  color: white;
+  background-color: rgba(255,255,255,0.5);
+  border-color: white;
+}
+.btn-inicio:active,
+.btn-inicio.active,
+.open > .dropdown-toggle.btn-inicio {
+  background-image: none;
+}
+
+
+.btn-base {
+  color: white;
+  background-color: transparent;
+  border-color: white;
+	border-width: 2px;
+}
+
+.btn-base:focus{
+	color: white;
+	background-color: transparent;
+	border-color: white;
+	border-width: 2px;
+}
+
+.btn-base:hover
+{
+  color: white;
+  background-color: rgba(240,190,50,0.3);
+  border-color: white;	
+  border-width: 2px;
+}
+
+.btn-base:active,
+.btn-base.active,
+.open > .dropdown-toggle.btn-base {
+  color: white;
+  background-color: rgba(255,255,255,0.5);
+  border-color: white;
+}
+.btn-base:active,
+.btn-base.active,
+.open > .dropdown-toggle.btn-base {
+  background-image: none;
+}
+
+.btn-head {
+  color: lightgrey;
+  background-color: transparent;
+	border-width:0px;
+}
+
+.btn-head:focus{
+	color: lightgrey;
+	background-color: transparent;
+}
+
+.btn-head:hover
+{
+  color: lightgrey;
+
+}
+
+.btn-head:active,
+.btn-head.active,
+.open > .dropdown-toggle.btn-head {
+  color: white;
+
+}
+.btn-head:active,
+.btn-head.active,
+.open > .dropdown-toggle.btn-head {
+  background-image: none;
+}
+
+.btn-opcion {
+  background-color: transparent;
+	border-width:0px;
+}
+
+.btn-opcion:focus{
+	background-color: transparent;
+}
+
+.btn-opcion:hover
+{
+	background-color: transparent;
+
+}
+
+.btn-opcion:active,
+.btn-opcion.active,
+.open > .dropdown-toggle.btn-opcion {
+  color: white;
+  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+}
+.btn-opcion:active,
+.btn-opcion.active,
+.open > .dropdown-toggle.btn-opcion {
+  background-image: none;
+}
+
+.btn-mapa {
+	color: #ffffff;
+	background-color: #3a3f44;
+	border-color: #3a3f44;
+}
+
+.btn-mapa:focus,
+.btn-mapa.focus {
+	color: #ffffff;
+	background-color: #3a3f44;
+	border-color: #3a3f44;
+}
+
+.btn-mapa:hover {
+	color: #ffffff;
+	background-color: #3a3f44;
+	border-color: #3a3f44;
+}
+
+.btn-mapa:active,
+.btn-mapa.active,
+.open > .dropdown-toggle.btn-mapa {
+	color: #ffffff;
+	background-color: #232628;
+	border-color: #1e2023;
+}
+
+
+.anclado{
+	position: fixed;
+	bottom: 10px;
+}
+
+.floatdiv{
+	position:absolute;
+	left: 50%;
+	top:0px;
+}
+
+li {
+  color: ghostwhite; /* bullet color */
+}
+

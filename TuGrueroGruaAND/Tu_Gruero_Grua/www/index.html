@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html>
+	<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+		<link rel="stylesheet" type="text/css" href="icon-fonts/icomoon/style.css">
+		<link rel="stylesheet" type="text/css" href="fonts/styles.css">
+
+		<link rel="stylesheet" type="text/css" href="slate/css/slate.css" class="uib-framework-theme">
+		<meta charset="UTF-8">
+		<title>Blank App Designer Cordova Web App Project Template</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+		<!--
+  * The "meta viewport" tag (below) helps your app size appropriately to a device's ideal viewport.
+  * Note that Windows device viewports work better when initialized using the @viewport CSS rule.
+  * For a quick overview of "meta viewport" and @viewport, see this article:
+  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
+  * To see how it works, try your app on a real device with and without a "meta viewport" tag.
+  * Additional useful references include:
+  *   http://www.quirksmode.org/mobile/viewports.html
+  *   http://www.quirksmode.org/mobile/metaviewport/devices.html
+  *   https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+-->
+
+		<!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+		<style>
+			/* following three (cascaded) are equivalent to above three meta viewport statements */
+			/* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+			/* see http://dev.w3.org/csswg/css-device-adapt/ */
+			
+			@-ms-viewport {
+				width: 100vw;
+				min-zoom: 100%;
+				zoom: 100%;
+			}
+			
+			@viewport {
+				width: 100vw;
+				min-zoom: 100% zoom: 100%;
+			}
+			
+			@-ms-viewport {
+				user-zoom: fixed;
+				min-zoom: 100%;
+			}
+			
+			@viewport {
+				user-zoom: fixed;
+				min-zoom: 100%;
+			}
+			/*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+		</style>
+
+		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="css/botones.css">
+		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+		<!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+		<!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
+		<!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+
+		<!-- Recommended location for your JavaScript libraries -->
+		<!-- These library references (below) are just examples to give you the general idea... -->
+		<!-- <script src="lib/mc/hammer.js"></script> -->
+		<!-- <script src="lib/ft/fastclick.js"></script> -->
+
+		<!--
+  * cordova.js is a phantom lib for "Cordova HTML5 web app," it does nothing in a "Standard HTML5 web app"
+  * Seeing a "Failed to load resource: net::ERR_FILE_NOT_FOUND" message caused by this "cordova.js" script?
+  * The cordova.js script is required if you convert your "Standard HTML5" project into a "Cordova" project.
+  * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
+-->
+		<script src="cordova.js" id="xdkJScordova_"></script>
+
+		<script src="js/app.js"></script>
+		<script src="js/msn.js"></script>
+		<!-- for your event code, see README and file comments for details -->
+		<script src="js/init-app.js"></script>
+		<!-- for your init code, see README and file comments for details -->
+		<script src="xdk/init-dev.js"></script>
+		<!-- normalizes device and document ready events, see file for details -->
+		<script type="application/javascript" src="lib/jquery.min.js"></script>
+		<script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+		<script type="application/javascript" src="js/index_user_scripts.js"></script>
+		<script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+		<script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="google_maps/goom.js"></script>
+		<script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+		<script type="application/javascript" src="js/GCM.js"></script>
+		<script type="application/javascript" src="js/BackGroundGPS.js"></script>
+		<script type="application/javascript" src="sidebar/js/hammer.js"></script>
+		<script type="application/javascript" src="sidebar/js/jquery.hammer.js"></script>
+		<script type="application/javascript" src="sidebar/js/swipe-hammer.js"></script>
+		<script type="application/javascript" src="sidebar/js/sidebar.js"></script>
+		<!--	<script type="application/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFeSlIAjDg8U7zsWW82uJCNLi3IZxq9fI;callback=mapsCallback" async defer></script>-->
+	</head>
+
+	<body>
+		<!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+		<!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
+		<!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+		<div class="upage inicio-fondo" id="mainpage">
+
+			<div class="upage-outer">
+				<div class="upage-content ac0 content-area vertical-col left" id="page_inicio">
+					<div class="grid urow uib_row_1 logo-pad" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col center">
+								<div class="widget uib_w_1" data-uib="media/img" data-ver="0">
+									<figure class="figure-align">
+										<img src="images/SVGs/Logo.svg">
+
+										<figcaption data-position="bottom"></figcaption>
+									</figure>
+								</div>
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+					<div class="anclado">
+						<div class="grid urow uib_row_2" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_2 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col center">
+									<button class="btn widget uib_w_2 d-margins btn-inicio inicio-redondo inicio-texto" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-entrar" onclick="Advertencia('open');">Entrar</button><span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="modal outer-element uib_w_13" data-uib="twitter%20bootstrap/modal" data-ver="1" data-backdrop="static" id="popupEntrar">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<div class="modal-body">
+							<div class="col uib_col_9 single-col" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+									<div class="widget uib_w_15 Alerta-size" data-uib="media/img" data-ver="0">
+										<figure class="figure-align">
+											<img src="images/SVGs/Logon.svg" id="iconoPop">
+
+											<figcaption data-position="bottom"></figcaption>
+										</figure>
+									</div>
+									<div class="widget uib_w_14 mensaje-textos mensajes-margen" data-uib="media/text" data-ver="0" id="mensajePop">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Le solicitamos que la información suministrada sea veraz. TU/GRUERO<sup>®</sup> se reserva el derecho de prestar sus servicios con el fin de salvaguardar la seguridad tanto de usuarios como grueros.</p>
+										</div>
+									</div>
+
+									<button class="btn widget uib_w_43 d-margins boton-base-texto btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="Btn-modal" onclick="Advertencia('cerrar');">Aceptar</button>
+									<span class="uib_shim"></span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="upage hidden fondo-app-bckg" id="paginaApp">
+			<div class="upage-outer">
+				<div class="uib-header header-bg container-group inner-element uib_w_3 encabezado-size uib-header-fixed" data-uib="layout/header" data-ver="0">
+					<h2></h2>
+					<div class="widget-container wrapping-col single-centered">
+						<div class="widget uib_w_4 d-margins" data-uib="media/img" data-ver="0">
+							<figure class="figure-align">
+								<img src="images/SVGs/Encabezado.svg">
+								<figcaption data-position="bottom"></figcaption>
+							</figure>
+						</div>
+					</div>
+					<div class="widget-container content-area horiz-area wrapping-col left">
+						<button class="btn widget uib_w_20 d-margins btn-head oculto-head" data-uib="twitter%20bootstrap/button" data-ver="1" id="back-btn" name="btn-bck"><i class="icon icon-back" data-position="icon only"></i>
+						</button>
+					</div>
+					<div class="widget-container content-area horiz-area wrapping-col right">
+
+						<button class="btn widget uib_w_26 d-margins btn-head oculto-head" data-uib="twitter%20bootstrap/button" data-ver="1" id="menu"><i class="icon icon-menu" data-position="icon only"></i>
+						</button>
+					</div>
+				</div>
+
+				<div class="upage-content ac0 content-area vertical-col left hidden" id="sub-terminos">
+
+					<div class="well no_wrap  widget uib_w_6 d-margins well-lg" data-uib="twitter%20bootstrap/well" data-ver="1">
+						<div class="col uib_col_4 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<div class="widget uib_w_232 d-margins" data-uib="media/img" data-ver="0">
+									<figure class="figure-align">
+										<img src="images/SVGs/Logon.svg">
+
+										<figcaption data-position="bottom"></figcaption>
+									</figure>
+								</div>
+								<div class="tarea widget uib_w_233 d-margins grua-texto" data-uib="media/text" data-ver="0" name="uib_w_233">
+									<div class="widget-container left-receptacle"></div>
+									<div class="widget-container right-receptacle"></div>
+									<div class="text-container">
+										<p>Para continuar debe aceptar los términios y condiciones de TU/GRUERO<sup>®</sup>
+										</p>
+									</div>
+								</div>
+
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<button class="btn widget uib_w_178 btn-opcion opcion-txt condiciones" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-check" value="No"><i class="icon icon-opcion button-icon-left" data-position="left"></i>Acepto términos y condiciones legales <a class="leer-link" href="#" onclick="avanzarGeneric('#legal');return false;">Leer</a>
+						</button>
+					</div>
+
+					<div class="grid urow uib_row_5 grid-pad rest-of-height" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_8 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+
+					<div class="grid grid-pad urow uib_row_53" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_91 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_11 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-termino">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								</button><span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+				</div>
+
+				<div id="legal" class="upage-content vertical-col left">
+					<div class="tarea widget uib_w_191 d-margins terminos-text terminos-margen" data-uib="media/text" data-ver="0" name="uib_w_191">
+						<div class="widget-container left-receptacle"></div>
+						<div class="widget-container right-receptacle"></div>
+						<div class="text-container">
+							<h3>Términios y condiciones<br>
+&nbsp;</h3>
+
+							<p>DEFINICIONES
+								<br>Para la más fácil y correcta interpretación de los términos y condiciones previstos en este documento, se definen a continuación:
+								<br>“Nosotros” y/o “el prestador del servicio de intermediación” &nbsp;se refieren indistintamente a Soluciones Tugruero, C.A.
+								<br>“Soluciones Tugruero, C.A” se refiere a la sociedad mercantil debidamente inscrita ante el Registro Mercantil Séptimo del Distrito Capital, de la Circunscripción Judicial del Estado Distrito Capital, bajo el N° 37 del año 2015 en Venezuela.
+								<br>“El Portal o El sitio web” &nbsp;se refieren indistintamente a la página web de TU/GRUERO®, a su aplicación móvil y a los Servicios de intermediación para la obtención de auxilio vial.
+								<br>“Costo del traslado/transporte” se refiere al monto que debe pagar Soluciones Tugruero, C.A al prestador directo de servicio de auxilio vial por el servicio de transporte realizado.
+								<br>“Servicio fallido”: Se entenderá por servicios fallidos aquellos servicios válidamente solicitados conforme a la data suministrada a Soluciones Tugruero, C.A. por la compañía de seguros con la cual tenga el usuario final contratada una póliza
+								de seguros vigente con cobertura de asistencia vial hasta el momento de recibirse la solicitud y cuya ejecución hubiere sido aceptada por el prestador directo del servicio de auxilio vial (grúa) o taxista pero que no se hubiera ejecutado por causas
+								no atribuibles al mismo o a Soluciones Tugruero, C.A..
+								<br>&nbsp;“Servicio de Transporte” se refiere al servicio de transporte prestado por el prestador directo del servicio de auxilio vial (remolque o grúa) &nbsp;a un usuario con el fin de recibir una remuneración por &nbsp;El traslado debe haber sido
+								prestado a través de la plataforma de TU/GRUERO®.
+								<br>“Prestador directo del servicio de auxilio vial” (remolque o grúa) &nbsp;Se refiere a los conductores de grúas que van a registrarse a través de la aplicación móvil TU/GRUERO®, como prestadores directos de servicios independientes para los Usuarios
+								finales afiliados a los servicios de intermediación de &nbsp;Soluciones Tugruero, C.A., creándose su clave. Y para ingresar a la app indicaran: cedula, placa de grúa y clave.
+								<br>“Usuario Final” se refiere a cualquier Persona que descargue o ingrese a la aplicación móvil TU/GRUERO®, que tenga contratada una póliza de seguros vigente con una compañía de seguros con la cual Soluciones Tugruero, C.A. tenga suscrito un contrato
+								de servicios que ampare la intermediación de servicios de asistencia vial, con el fin de solicitar un servicio de grúas y/o taxi (cuando aplique) &nbsp;indicando: cedula, placa del vehículo asegurado (accidentado) y compañía de seguro donde tiene
+								contratada su póliza.
+								<br>“Grúa” se refiere al vehículo automotriz usado por un prestador de servicios directo con el fin de ofrecer un servicio de traslado a un vehículo accidentado de un Usuario Final.
+								<br>App: &nbsp;El prestador del servicio de intermediación ha desarrollado una aplicación de software denominada “TU/GRUERO®” que se instala en dispositivos móviles o tablets para ayudar al usuario final en la labor concreta de acceder a una base
+								de datos de prestadores directos de servicios de asistencia vial de remolques (grúas) y/o taxi mediante la cual según la ubicación física de los prestadores de dicho servicio y el sitio de ocurrencia del siniestro cubierto por la póliza emitida
+								por la compañía de seguros afiliada a nuestros servicios de intermediación, pueda establecerse de manera más eficiente una solicitud de prestación del servicio de asistencia vial de remolque de vehículos y/o taxi. &nbsp;
+								<br>“Call Center (24/7) 0-800-GRUERO-O”: Se refiere a un centro de atención telefónica operado por Soluciones Tugruero, C.A. donde tanto usuarios finales como prestadores directos de servicios podrán llamar en cualquier momento para resolver distintas
+								situaciones especiales que por motivos externos a la empresa hagan que no puedan resolverlos con su teléfono inteligente mediante la app.&nbsp;
+								<br>
+								<br>ACUERDO&nbsp;
+								<br>Este documento de Términos y Condiciones de Uso (el “Acuerdo”) constituyen un contrato legalmente vinculante para Usted (“PRESTADOR DIRECTO DEL SERVICIO DE AUXILIO VIAL” y “USUARIO FINAL”) y para Soluciones Tugruero, C.A, Sociedad Mercantil debidamente
+								registrada en Venezuela, algunas veces haciendo negocios como “TU/GRUERO®” (conjuntamente, “Soluciones Tugruero, C.A.”). Para poder utilizar los Servicios y el software asociado (app) deberá aceptar previamente los Términos y Condiciones establecidos
+								a continuación.
+								<br>Soluciones Tugruero, C.A. ofrece sus Servicios en o a través de su portal web &nbsp;www.tugruero.com y/o www.tugruero.com.ve (“Sitio web”), de la aplicación software para el teléfono móvil (app) o celular, y servicios relacionados (conjuntamente,
+								a estos servicios, incluyendo cualquier nueva función y actualización de las aplicaciones, y el Sitio web, los “Servicios”), sujetos a los siguientes términos y condiciones del prestador directo del servicio de auxilio vial. "Servicio", expresamente,
+								no incluye los servicios de traslado que son prestados por usted, como prestador directo del servicio de auxilio vial. Al utilizar o recibir cualquiera de los servicios ofrecidos por Soluciones Tugruero, C.A, y descargar, instalar o utilizar cualquiera
+								de los software asociados suministrados por Soluciones Tugruero, C.A, utilizar los Servicios en general (en adelante, el "Software"), usted de manera expresa reconoce y acepta que quedará vinculado por los términos y condiciones de este Acuerdo,
+								así como a cualquier modificación y adición posterior a este Acuerdo que se publica en o a través de los Servicios. SI USTED NO ESTÁ DE ACUERDO CON ESTOS TÉRMINOS Y CONDICIONES, POR FAVOR NO USAR, ACCEDER O REGISTRARSE EN LOS SERVICIOS, ASÍ COMO
+								TAMPOCO DESCARGUE, INSTALE NI UTILICE EL SOFTWARE ASOCIADO.
+								<br>Derecho a Modificar. Soluciones Tugruero, C.A se reserva el derecho a realizar modificaciones en cualquier momento a los Términos y Condiciones de este Acuerdo o a sus políticas relacionadas a los Servicios o al Software dentro de los limites
+								fijados por las leyes de la Republica Bolivariana de Venezuela. Éstas surtirán efectos a partir del momento de la publicación actualizada de dicho Acuerdo en el Sitio web o en el Software. Usted es el único responsable en revisar con regularidad
+								este Acuerdo. Su uso continuado del Servicio después de que los Términos y Condiciones Modificados hayan sido publicados constituirá su aceptación a las modificaciones realizadas en este Acuerdo.
+								<br>Al estar de acuerdo con estos Términos y Condiciones, Usted de manera expresa da consentimiento para recibir mensajes o correos electrónicos que contengan noticias, encuestas, promociones y ofertas especiales. Si no desea recibir este tipo de
+								mensajes electrónicos podrá optar por no recibirlos o cambiar Sus preferencias.&nbsp;
+								<br>Los términos y condiciones que se establecen en lo adelante serán de aplicación común tanto para los usuarios finales como para los prestadores directos de los servicios de auxilio vial, salvo que se indique lo contrario o por su naturaleza solo
+								sea aplicable a una sola categoría.
+								<br>
+								<br>CÓMO USAR EL SERVICIO TU/GRUERO®.&nbsp;
+								<br>Nosotros ofrecemos una plataforma digital para enviar una solicitud de asistencia en carretera a los servicios de remolque a un prestador directo de servicio de auxilio vial. El receptor Global Position System o &nbsp;GPS por sus siglas en ingles
+								(Sistema de Posicionamiento Global), que debe ser instalado en el dispositivo móvil (teléfono inteligente), o la dirección de protocolo de Internet en su computador, solicita su permiso como usuario final para detectar su ubicación y envía su
+								información de ubicación al prestador directo de servicio de auxilio vial correspondiente. El prestador directo de servicio de auxilio vial tiene la discreción única y completa para aceptar o rechazar cada solicitud de servicio. El prestador directo
+								de servicio &nbsp;también tiene la discreción única y completa sobre la posibilidad de utilizar el servicio TU/GRUERO® &nbsp;para recibir a los clientes potenciales generados a través del portal de TU/GRUERO®. Si el prestador directo de servicio
+								acepta una solicitud, la aplicación móvil TU/GRUERO®, le notifica y proporciona información sobre el usuario final - incluyendo la información del vehículo, y la capacidad de ponerse en contacto con el usuario por teléfono.&nbsp;
+								<br>En caso de no poder acordarse con un prestador directo de los servicios de auxilio vial por medio de la app el usuario final podrá solicitarlos a través del CALL CENTER quien realizará todas las diligencias necesarias para contactar a un prestador
+								directo de servicios de auxilio vial disponible.&nbsp;
+								<br>Sólo se va a utilizar un punto de acceso o la cuenta de datos 3G (AP), que está autorizado a utilizar; Usted es consciente de que al solicitar servicios por SMS si está disponible en su jurisdicción), se aplicarán cargos de mensajería estándar;
+								Usted no utilizará el Servicio TU/GRUERO®con un dispositivo incompatible o no autorizado.&nbsp;
+								<br>El uso del Servicio TU/GRUERO® es gratis para los usuarios finales.
+								<br>
+								<br>RENUNCIAS
+								<br>Los Servicios están diseñados con el propósito de ofrecer una plataforma de comunicación que conecte al usuario final con un prestador directo de servicio como prestador de de servicio independiente de Soluciones Tugruero, C.A.
+								<br>Nosotros, ofrecemos el portal TU/GRUERO®y los Servicios “tal cual” y sin ningún tipo de garantía o condición, expresa, implícita o legal. No garantizamos ni prometemos resultados concretos por la utilización del portal TU/GRUERO® y/o los Servicios.
+								En especial, negamos cualquier garantía implícita de título, comerciabilidad, adecuación para un propósito en particular y la no infracción. Algunas jurisdicciones/legislaciones no permiten la limitación de garantías implícitas, por lo que la
+								renuncia anterior puede no aplicarle.&nbsp;
+								<br>Nosotros no garantizamos que el uso que usted haga de nuestros servicios de intermediación &nbsp;serán exactos, ininterrumpido, siempre disponible, o libre de errores, o que estos van a satisfacer sus necesidades, o que cualquier defecto en los
+								servicios será corregido o que los Servicios estén libres de virus u otros componentes dañinos. Declinamos responsabilidad por, y no garantizamos nada con respecto a la conectividad y la disponibilidad. No podemos será valido ningún servicio requerido
+								por un usuario final sino posee la edad mínima requerida, ni aceptamos responsabilidad alguna por cualquier contenido, comunicación u otro uso o acceso al portal TU/GRUERO®o a los Servicios por personas menores de la edad mínima requerida en violación
+								de este Acuerdo. No somos responsables de ninguna manera por cualquier contenido publicado en el portal TU/GRUERO®o en conexión con los Servicios, ya sea que fue publicado o causado por algún usuario final del portal TU/GRUERO®, por Soluciones
+								Tugruero, C.A, o un tercero asociado al portal TU/GRUERO® o a sus Servicios.
+								<br>Aunque proporcionamos reglas para la conducta y publicaciones de los usuarios finales y los prestadores directos de servicios, Nosotros no controlamos ni somos responsables de lo que estos publican, transmiten o comparten en el portal TU/GRUERO®,
+								ni somos responsables de ningún tipo de contenido ofensivo, inapropiado, obsceno, ilegal u objetable que usted pueda encontrar en el portal TU/GRUERO® o en relación con cualquier contenido. Nosotros no somos responsables de ninguna manera por
+								cualquier daño causado por los actos u omisiones de cualquier usuario final o prestador directo de servicios, incluyendo aquellos que pudiesen ser ocasionados antes, después o en el curso del traslado u otro servicio de transporte. Soluciones
+								Tugruero, C.A no se responsabiliza por la conducta, ya sea “online” u “offline”, de cualquier usuario final &nbsp;o prestador directo de servicios del portal TU/GRUERO® o demás Servicios. Asimismo, es posible que otros puedan obtener información
+								personal sobre usted debido al uso que usted haga del portal TU/GRUERO® y demás Servicios, y que el destinatario pueda utilizar dicha información para acosarlo u ocasionarle algún daño. No nos hacemos responsables por el uso de cualquier información
+								personal que usted divulgue en el portal TU/GRUERO® o a través de la app.
+								<br>Usted es el único responsable de sus interacciones con otros usuarios finales y prestadores directos de servicios. Nos reservamos el derecho, pero sin poseer obligación alguna, de monitorear disputas entre usted y otros usuarios finales o prestadores
+								directos de servicios. Por favor seleccione cuidadosamente el tipo de información que publique en el portal TU/GRUERO® o a través de los Servicios o suministre a los demás. Renunciamos a cualquier responsabilidad, independientemente de la forma
+								de acción, por los actos u omisiones de otros participantes, Usuarios finales o prestadores directos de servicios (incluyendo usuarios no autorizados o "hackers").
+								<br>Soluciones Tugruero, C.A sólo ofrece un portal que permite a los prestadores directos de servicio y a los Usuarios finales conectarse. En otras palabras, Soluciones Tugruero, C.A consiste en un servicio especializado con el propósito de optimizar
+								el requerimiento del servicio de GRUAS O ASISTENCIA VIAL, sin crear alguna relación laboral con el prestador directo de servicios &nbsp;ni con el usuario final. TU/GRUERO® no ofrece servicios de transporte y Soluciones Tugruero, C.A no es una
+								empresa de traslado o de asistencia vial. Nosotros no estamos involucrados en el traslado real proporcionado por el prestador directo de servicios. Como resultado, nosotros no tenemos control sobre la calidad o la seguridad del traslado que se
+								produce como consecuencia del servicio de asistencia vial; ni tenemos control alguno sobre la veracidad o exactitud de la información de los participantes que figuran en el portal de TU/GRUERO®. No podemos asegurar que un prestador directo de
+								servicios o un usuario final sea la persona que dice ser, o que un prestador directo de servicios en realidad completará el servicio contratado. Nos reservamos el derecho de cambiar cualquier contenido, software y otros artículos usados o contenidos
+								en el portal TU/GRUERO® y en los Servicios en cualquier momento sin previo aviso. La referencia a cualquier producto, servicio, proceso u otra información, por nombre comercial, marca comercial, fabricante, proveedor u otro no constituye o implica
+								el respaldo, patrocinio o recomendación de los mismos, o cualquier afiliación con los mismos, por Soluciones Tugruero, C.A o el portal TU/GRUERO®.
+								<br>El portal TU/GRUERO® y los Servicios podrán estar temporalmente fuera de servicio de vez en cuando por mantenimiento u otras razones. Soluciones Tugruero, C.A no asume responsabilidad alguna por cualquier error, omisión, interrupción, eliminación,
+								defecto, demora en la operación o transmisión, fallas en las líneas de comunicación, robo o destrucción o acceso no autorizado, o alteración, a las comunicaciones del usuario final o prestador directo de servicios. Soluciones Tugruero, C.A no
+								es responsable de cualquier mal funcionamiento técnico u otros problemas de alguna de las redes telefónicas o de servicios, sistemas informáticos, servidores o proveedores, equipo o equipos de telefonía móvil, software, falla de emails o participantes
+								a cargo de problemas técnicos o congestión de tráfico en Internet, en el portal TU/GRUERO®, o en cualquier sitio web o cualquier combinación de los mismos, incluyendo lesiones o daños a la computadora del usuario final, del prestador directo de
+								servicios o de cualquier otra persona, al teléfono móvil u otro hardware o software, relacionado con, o como resultado de, el uso o descarga de materiales relacionados con la Web y/o en conexión los Servicios.
+								<br>el prestador directo de servicios entiende y reconoce que (1) Soluciones Tugruero, c.a no brinda los servicios de transporte (servicios de grúa y/o taxi) a los usuarios finales, (2) Soluciones Tugruero, c.a no es una empresa de transporte. es
+								elección y decisión del prestador directo de servicio decidir prestar o no el servicio de transporte a un usuario final contactado a través del portal TU/GRUERO®, y es elección del usuario final aceptar o no el servicio de asistencia vial de cualquier
+								prestador directo de servicio en contacto a través del portal TU/GRUERO®. cualquier decisión tomada por un usuario final de &nbsp;solicitar un traslado a través del portal TU/GRUERO® es una decisión tomada en exclusiva discreción del usuario final
+								de igual forma la decisión del prestador de servicio de aceptar la solicitud del servicio de asistencia vial por el usuario final es una decisión propia. Soluciones tugruero, c.a ofrece la información y el portal para conectar a los prestadores
+								directos de servicios con los usuarios finales y viceversa, pero no proporciona, ni pretende brindar servicios de asistencia vial (grúa y/o taxi), traslado, o actuar de ninguna manera como transportista, así como tampoco tiene responsabilidad
+								por cualquier servicio de transporte o asistencia vial adquirido por un usuario final o proporcionado por un prestador directo de servicios &nbsp;bajo el uso del portal TU/GRUERO®.&nbsp;
+								<br>El prestador directo del servicio aun cuando haya aceptado prestar sus servicios al usuario final no estará obligado a transportar cargas ni mascotas.
+								<br>
+								<br>LICENCIA
+								<br>Sujeto a los términos y condiciones de este Acuerdo, por la presente se le concede una licencia no exclusiva, limitada, intransferible, totalmente revocable para utilizar el portal TU/GRUERO® y/o la app, únicamente para su uso personal, no comercial,
+								y según lo permitido por las funciones del servicio y el derecho aplicable. Soluciones Tugruero, C.A se reserva todos los derechos sobre el Servicio y el Contenido de Soluciones Tugruero, C.A (según se define a continuación) no expresamente concedidos
+								en el presente Acuerdo. Soluciones Tugruero, C.A podrá revocar esta licencia en cualquier momento por cualquier motivo. Ni los prestadores directos del servicios, ni los usuarios finales tendrán derecho a acceder, copiar o alterar &nbsp;el código
+								fuente de la app, ni alterar o interferir &nbsp;con el funcionamiento del sitio web en ninguna manera.
+								<br>
+								<br>REGISTRO E INFORMACIÓN DEL PRESTADOR DIRECTO DE SERVICIOS.
+								<br>Para poder ingresar y usar algunas funciones de los servicios, usted tendrá que registrarse primeramente, y luego ser confirmado por TU/GRUERO®. El prestador directo de servicios acepta que para registrarse deberá introducir su &nbsp;cedula de
+								identidad,, modelo, marca y placas de la grúa y clave que se debe de crear en TU/GRUERO® además de pasar una evaluación, realizada por &nbsp;Soluciones Tugruero, C.A, quien puede rehusarse o cancelar la cuenta del prestador directo de servicios
+								en cualquier momento, ya sea por quejas o por políticas internas. Si decide inscribirse en los Servicios, usted está de acuerdo en proporcionar y mantener la información verdadera, precisa, actualizada y completa sobre usted requerida en el formulario
+								de registro del Servicio. Datos de registro y cierta otra información sobre Usted se rigen por nuestra política de privacidad.
+								<br>Usted es el único &nbsp;autorizado en su cuenta TU/GRUERO®. Usted no podrá autorizar a otros a hacer uso de su cuenta así como tampoco podrá cederla o transferirla &nbsp;a cualquier otra persona o entidad. Usted es responsable de mantener la confidencialidad
+								de cualquier contraseña proporcionada por usted o por Soluciones Tugruero, C.A para acceder al portal TU/GRUERO®.
+								<br>Al aceptar este Acuerdo, el prestador directo de servicios acepta que Soluciones Tugruero, C.A puede obtener su información personal, lo que incluye sin limitación alguna los registros de tránsito del prestador directo de servicios. El prestador
+								directo de servicios autoriza a Soluciones Tugruero, C.A a realizar la revisión de Sus antecedentes, así como también se compromete en proporcionar cualquier autorización que sea necesaria para facilitar el acceso de Soluciones Tugruero, C.A al
+								registro oficial de tránsito del prestador directo de servicios durante la vigencia de dicho Acuerdo.&nbsp;
+								<br>Usted se compromete a notificar inmediatamente a Soluciones Tugruero, C.A de cualquier uso no autorizado de su contraseña o cualquier violación de la seguridad. También acepta que Soluciones Tugruero, C.A no será responsable por cualquier pérdida
+								o daño causado por su falta de mantener su contraseña segura.&nbsp;
+								<br>Cumplimiento: Usted se compromete a cumplir con todas las leyes locales sobre conducta y contenido aceptable. Además, debe cumplir con nuestras políticas como se indica en las conducta del prestador directo de servicios, así como todas las demás
+								reglas de operación, políticas y procedimientos que puedan ser publicadas de vez en cuando a través del portal TU/GRUERO®, cada una de las cuales se incorpora aquí por referencia y cada uno de que pueden ser actualizados por TU/GRUERO® de vez
+								en cuando sin previo aviso.
+								<br>
+								<br>CONDUCTA DEL PRESTADOR DIRECTO DE SERVICIO
+								<br>Usted es el único responsable de la información, datos, textos, mensajes u otros materiales ("Contenido") que usted cargue, publique, o muestre (en adelante, "Suba") o por correo electrónico o cualquier otro uso a través del Servicio. Soluciones
+								Tugruero, C.A se reserva el derecho de investigar y tomar las medidas legales contra cualquiera que, a la sola discreción de Soluciones Tugruero, C.A, viole esta disposición, incluyendo sin limitación, la eliminación de los contenidos ofensivos
+								del portal TU/GRUERO®, suspender o terminar la cuenta de dichos usuarios y presentar informes sobre Usted a las autoridades policiales.&nbsp;
+								<br>Usted acepta en no hacer uso del portal TU/GRUERO® para:
+								<br>·&nbsp;&nbsp; &nbsp;Hacerse pasar por otra persona o entidad, o declarar falsamente o tergiversar su afiliación con una persona o entidad;
+								<br>·&nbsp;&nbsp; &nbsp;“Acechar" o acosar a cualquier persona;
+								<br>·&nbsp;&nbsp; &nbsp;Solicitar información personal de cualquier persona menor de 18 años;
+								<br>·&nbsp;&nbsp; &nbsp;Recoger o recolectar direcciones de correo electrónico u otra información de contacto de los usuarios finales o de los prestadores directos de servicios, por medios electrónicos o de otro tipo, con el fin de enviar correos
+								electrónicos y otras comunicaciones no solicitadas;
+								<br>·&nbsp;&nbsp; &nbsp;Anunciar u ofrecer a la venta o a la compra cualquier producto o servicio para cualquier fin comercial que no esté autorizado;
+								<br>·&nbsp;&nbsp; &nbsp;Impulsar o promover cualquier actividad o empresa delictiva o proporcionar instrucciones sobre actividades ilegales;
+								<br>·&nbsp;&nbsp; &nbsp;Obtener o intentar acceder o de otro modo obtener cualquier material o información mediante cualquier medio que no sea intencionalmente puesto disponible o previsto a través del portal TU/GRUERO®; o
+								<br>·&nbsp;&nbsp; &nbsp;Enviar un correo electrónico o de otra manera cargar/subir (“Upload”) cualquier contenido que (i) infrinja cualquier propiedad intelectual u otros derechos de propiedad de cualquier parte; (ii) usted no tenga derecho a cargar/subir
+								(“Upload”) bajo ninguna ley o bajo ninguna relación contractual o fiduciaria; (iii) contenga virus de software o cualquier otro código informático, archivos o programas diseñados para interrumpir, destruir o limitar la funcionalidad de cualquier
+								software o hardware o equipo de telecomunicaciones; (iv) plantee o cree un riesgo para la privacidad o la seguridad de cualquier persona; (v) constituya publicidad no solicitada o no autorizada, materiales promocionales, actividades y/o ventas,
+								"correo basura", "spam", "cartas en cadena", "esquemas piramidales", "concursos", "sorteos", o cualquier otra forma de solicitación; (vi) sea ilegal, dañino, amenazador, abusivo, acosador, agraviante, excesivamente violento, difamatorio, vulgar,
+								obsceno, pornográfico, calumnioso, invasivo de la privacidad de otro, de odio racial, étnico u objetable de cualquier otra forma; o (vii) en el juicio o criterio de Soluciones Tugruero, C.A, sea inaceptable ya que podría restringir o inhibir a
+								cualquier otra persona de usar o disfrutar del portal TU/GRUERO®, o que pueda exponer a Soluciones Tugruero, C.A, sus usuarios finales o prestadores directos de servicios a cualquier daño o responsabilidad de cualquier tipo; interferir o interrumpir
+								el Servicio, servidores, o redes conectadas al Servicio, o incumplir los requisitos, procedimientos, políticas o regulaciones de las redes conectadas al Servicio; o violar cualquier ley aplicable ya sea local, estatal, provincial, nacional o internacional
+								, o cualquier regulación con fuerza de ley.
+								<br>A menos que sea autorizado expresamente en este documento o en el portal TU/GRUERO®, usted está de acuerdo en abstenerse a mostrar, distribuir, otorgar licencia, realizar, publicar, reproducir, duplicar, copiar, crear trabajos derivados de, modificar,
+								vender, revender, explotar, transferir o cargar/subir con fines comerciales, cualquier parte de los Servicios, el uso de los Servicios, o el acceso a los Servicios.&nbsp;
+								<br>
+								<br>ESTATUS DEL PRESTADOR DIRECTO DE SERVICIOS, REPRESENTACIÓN Y GARANTIAS
+								<br>Al aceptar este Acuerdo, usted garantiza que es un Conductor de Grúas, Registrado en el portal TU/GRUERO®. Usted garantiza ser un prestador directo de servicios &nbsp;sujeto a los términos y condiciones de este Acuerdo.&nbsp;
+								<br>Al utilizar los Servicios, el prestador directo de servicios Declara, Garantiza y Acepta que:
+								<br>·&nbsp;&nbsp; &nbsp;Tal prestador directo de servicios &nbsp;tiene o es mayor de 21 años de edad.
+								<br>·&nbsp;&nbsp; &nbsp;Tal prestador directo de servicios posee una licencia válida en Venezuela y está autorizado para operar un vehículo de motor además de tener todas las licencias, aprobaciones y autorizaciones correspondientes para proporcionar
+								el servicio de transporte y Servicio de asistencia vial a terceros en todas las jurisdicciones en las que dicho prestador directo de servicios hará uso del portal TU/GRUERO®.
+								<br>·&nbsp;&nbsp; &nbsp;Tal prestador directo de servicio posee, o tiene el derecho legal, para operar el vehículo utilizado por el prestador directo de servicios cuando acepta brindar el servicio de asistencia vial a un usuario final y dicho vehículo
+								se encuentra en buen estado de funcionamiento y cumple con los estándares de seguridad de la industria y todos los requisitos de vehículos de motor aplicables impuestos por la autoridad gubernamental aplicable para un vehículo de ese tipo.
+								<br>·&nbsp;&nbsp; &nbsp;Tal prestador directo de servicios posee una póliza válida de seguro de responsabilidad civil valida en la Republica Bolivariana de Venezuela que el prestador directo de servicios viaje (con una cobertura consistente con todos
+								los requisitos legales aplicables) para cubrir cualquier pérdida anticipada relacionada con la prestación del servicio de traslado a los Usuarios finales.
+								<br>·&nbsp;&nbsp; &nbsp;Tal prestador directo de servicios será el único responsable de cualquier y toda responsabilidad que resulte de o se alegue como resultado de la operación del vehículo que dicho prestador directo de servicios utiliza para la
+								prestación del servicio de auxilio vial, incluyendo, pero no limitado a daños personales, muerte y daños a la propiedad.
+								<br>·&nbsp;&nbsp; &nbsp;En el evento de un accidente de tránsito dicho prestador directo de servicios será el único responsable por el cumplimiento de los requisitos legales aplicables y de contactar de cualquier manera a la compañía de seguros de
+								dicho usuario final.
+								<br>·&nbsp;&nbsp; &nbsp;Tal prestador directo de servicios cumplirá con todas las leyes aplicables relacionadas con los asuntos establecidos en este documento, y será el único responsable de cualquier violación de tales leyes aplicables.
+								<br>·&nbsp;&nbsp; &nbsp;Dicho prestador directo de servicios no tiene ninguna representación con respecto a Soluciones Tugruero, C.A. El prestador directo de servicios no deberá establecer que es un agente o representante de Soluciones Tugruero, C.A.
+								<br>·&nbsp;&nbsp; &nbsp;Dicho prestador directo de servicios se adherirá a la política de cero tolerancia a sustancias toxicas de Soluciones Tugruero, C.A., expuestas más adelante.
+								<br>·&nbsp;&nbsp; &nbsp;Tal prestador directo de servicios autoriza a Soluciones Tugruero, C.A a su discreción obtener los registros de tránsito del prestador directo de servicios antes de comenzar a utilizar el portal TU/GRUERO®, y trimestralmente
+								a partir de entonces.
+								<br>·&nbsp;&nbsp; &nbsp;Tal prestador directo de servicios autoriza a Soluciones Tugruero, C.A, a su discreción para ejecutar una verificación de antecedentes penales antes, durante o después de comenzar el uso de los servicios de asistencia vial.
+								<br>·&nbsp;&nbsp; &nbsp;Tal prestador directo de servicios entiende que Soluciones Tugruero, C.A puede utilizar una o varias empresas externas para indagar sus antecedentes penales y los controles de antecedentes de tránsito, y específicamente autoriza
+								dichas empresas para llevar a cabo este tipo de verificación de antecedentes en nombre Soluciones Tugruero, C.A.
+								<br>·&nbsp;&nbsp; &nbsp;Dicho prestador directo de servicios no discriminará, ni acosará a cualquier persona sobre la base de raza, origen nacional, religión, sexo, identidad de género, discapacidad física o mental, condición médica, estado civil,
+								edad u orientación sexual.
+								<br>·&nbsp;&nbsp; &nbsp;El prestador directo de servicios debe garantizar completar el servicio que aceptó, ya sea que el mismo lo termine, o pida colaboración de otro prestador directo de servicios para hacer trasbordo y este último lo finalice.&nbsp;&nbsp;
+								<br>·&nbsp;&nbsp; &nbsp;Si el prestador directo de servicios se queda accidentado, es responsabilidad de este culminar el servicio. Pero debe reportar primero a nuestro call center la forma en que lo culminará (llamando a otro prestador directo de
+								servicio, reparando su vehículo, etc).&nbsp;
+								<br>·&nbsp;&nbsp; &nbsp;TU/GRUERO® no participa en ninguna transacción económica entre prestadores directos de servicios, en el caso en que estos realicen trasbordos, TU/GRUERO® le cancelará la totalidad del servicio al 1er prestador directo de servicio
+								que aceptó la solicitud.&nbsp;
+								<br>·&nbsp;&nbsp; &nbsp;El prestador directo de servicio debe responder a la solicitud del usuario final ya sea una respuesta positiva o negativa en un lapso de tiempo no mayor de quince (15) minutos.
+								<br>·&nbsp;&nbsp; &nbsp;En el caso de irregularidades en el momento de un servicio (trancas por protestas, accidentes de tránsito, imposibilidad de transitar la vía por agravio de las mismas, ejemplo: se cae un puente, accidentes naturales, etc),
+								el prestador directo de servicios debe llamar al call center y se negociará el nuevo monto a cobrar por el servicio que se encuentre realizando.&nbsp;&nbsp;
+								<br>·&nbsp;&nbsp; &nbsp;El prestador directo de servicio debe garantizar y verificar que el vehículo que va a remolcar es el vehículo indicado en la notificación de solicitud de servicio. En caso de que TU/GRUERO® determine que el vehículo que está
+								remolcando NO es el correcto, TU/GRUERO® se reserva el derecho de cancelarle el pago a dicho proveedor y de sancionarlo de acuerdo a las políticas internas de TU/GRUERO®.&nbsp;
+								<br>* Un acto fraudulento acarreará para el prestador directo del servicio una sanción de bloqueo en el portal TU/GRUERO® de 180 días continuos.&nbsp;
+								<br>* Dos actos fraudulentos acarrearán para el prestador directo del servicio una sanción de bloqueo en el portal TU/GRUERO® de 360 días continuos.&nbsp;
+								<br>* Tres actos fraudulentos acarrearán para el prestador directo del servicio una sanción de bloqueo permanente en el portal TU/GRUERO®.&nbsp;
+								<br>·&nbsp;&nbsp; &nbsp;TU/GRUERO® no hará pagos extras por remolques de vehículos que lleven carga, TU/GRUERO® pagará a los prestadores directos de servicios dichos servicios como si fuesen sin carga. Queda a discreción del prestador directo del
+								servicio transportar esos vehículos con carga y no podrá reclamar primas o recargos en caso de aceptar su traslado teniendo derecho tan solo a recibir de Soluciones tugruero, C.A. solo los pagos ya indicados de acuerdo a baremo &nbsp;de un servicio
+								sin carga.&nbsp;
+								<br>·&nbsp;&nbsp; &nbsp;Se entiende que un carro blindado entra en la categoría de Peso 3 y 4 &nbsp;
+								<br>·&nbsp;&nbsp; &nbsp;Nuestros prestadores directos de servicios no están obligados a permanecer con el usuario final una vez que llegó al destino indicado al inicio de la solicitud del servicio. TU/GRUERO®, no garantiza que el prestador directo
+								de servicio se quede esperando en el destino (ejemplo: taller, descarga en etc). Si el usuario final y el prestador directo de servicios acuerdan un tiempo de espera, Soluciones tugruero, C.A. no se hace responsable ni participa de dicha negociación
+								o acuerdo.&nbsp;
+								<br>·&nbsp;&nbsp; &nbsp;Tenemos un Call Center (24/7), donde tanto usuarios finales como prestadores directos de servicios podrán llamar en cualquier momento para resolver distintas situaciones especiales que por motivos externos a la empresa hagan
+								que no puedan resolverlos con su teléfono inteligente.
+								<br>
+								<br>Supuestos de SERVICIO FALLIDO.&nbsp;
+								<br>Se considerará causa justificada para un SERVICIO FALLIDO las que se enuncian a continuación:
+								<br>a) El vehículo accidentado se encuentre efectivamente fuera del Territorio de la República Bolivariana de Venezuela.
+								<br>b) EL USUARIO FINAL desiste de su solicitud de servicio luego de transcurridos más de quince (15) minutos de haberse procesado su solicitud.
+								<br>c) El prestador directo del servicio de auxilio vial (remolque o grúa) y/o taxista reporta al centro de atención telefónica del PRESTADOR DEL SERVICIO que la solicitud del USUARIO FINAL constituye un acto fraudulento.
+								<br>d) Al momento de arribar el prestador directo del servicio de auxilio vial (remolque o grúa) y/o taxista al lugar señalado en la solicitud del USUARIO FINAL este lo abandonó o el vehículo accidentado no se encuentra en ese lugar.
+								<br>e) Al momento de arribar el prestador directo del servicio de auxilio vial (remolque o grúa) y/o taxista al lugar señalado en la solicitud del USUARIO FINAL el vehículo accidentado y/o EL USUARIO FINAL han sido retenidos por las autoridades de
+								tránsito terrestre o policiales por tener relación con la comisión de un presunto acto delictivo.
+								<br>f) Si el vehículo accidentado supera xxxx kilogramos de peso.
+								<br>g) En todo caso en que la ejecución del SERVICIO implique un riesgo razonable e inminente a la seguridad de las personas o sus bienes.
+								<br>En estos casos el prestador directo del servicio tendrá derecho a la remuneración conforme se prevé en el baremo.
+								<br>
+								<br>Restricciones y limitaciones a la prestación de EL SERVICIO.
+								<br>Quedará a discreción del Soluciones Tugruero, C.A y/o del prestador directo del servicio de auxilio vial (remolque o grúa) &nbsp; y/o taxista prestar sus servicios o no &nbsp;en horario nocturno entendiéndose por el mismo el que transcurre desde
+								las 6:00 P.M. hasta las 5:00 A.M. en las siguientes zonas o sectores:&nbsp;
+								<br>·&nbsp;&nbsp; &nbsp;Estado Barinas: Orocito, Guanapa, Paraiso
+								<br>·&nbsp;&nbsp; &nbsp;Estado Falcón: Pueblo de Cumarebo.
+								<br>·&nbsp;&nbsp; &nbsp;Estado Miranda: Propatria, Los Frailes de Catia, Manicomio (suroeste), La Vega, Carapita, Kennedy (Las Adjuntas).
+								<br>·&nbsp;&nbsp; &nbsp;Estado Lara: La Carucieña, Ujano.
+								<br>·&nbsp;&nbsp; &nbsp;Estado Yaracuy: La Raya (de San Felipe a Moron), Via de Chibacoa a Nirgua
+								<br>·&nbsp;&nbsp; &nbsp;Estado Zulia: El Mojan, Santa Cruz de Mara.
+								<br>Quedará a discreción del Soluciones Tugruero, C.A y/o del prestador directo del servicio de auxilio vial (remolque o grúa) y/o taxista prestar sus servicios o no en cualquier horario en las siguientes zonas o sectores.
+								<br>·&nbsp;&nbsp; &nbsp;Estado Aragua: Las Delicias, San Joaquin, Cagua, La Villa, San Francisco, Tocorón, Palo Negro, La Croquera, La Carrisalera.
+								<br>·&nbsp;&nbsp; &nbsp;Estado Carabobo: Plaza de toros, Parcelas del socorro, Lomas de Funval,&nbsp;Fundación Alicia Pietri, La Democracia, Bella vista,&nbsp;González Plaza,&nbsp;La Cidra, El patio.
+								<br>·&nbsp;&nbsp; &nbsp;Estado Falcón: La Cañada, Zumurucuare.
+								<br>·&nbsp;&nbsp; &nbsp;Estado Mérida: Simón Bolívar, Pueblo Nuevo, Hueco Piche.
+								<br>·&nbsp;&nbsp; &nbsp;Estado Miranda: Guarataro, Observatorio, Cota 905, Calle 18 de El Valle, Petare: El Campito, San Blas, Sector El Encantado.Turgua, 23 de enero.
+								<br>·&nbsp;&nbsp; &nbsp;Estado Lara: Carorita, Pamaca, La Sabila
+								<br>·&nbsp;&nbsp; &nbsp;Estado Nueva Esparta: El Piache. Achipano 1, Achipano 2, Villa Rosa, San Antonio, Macho Muerto, La Isleta 1, La Isleta 2, Manzanillo, Aricagua, El Tirano.
+								<br>·&nbsp;&nbsp; &nbsp;Estado Táchira: Zorca, San Josesito, Hiranzo, El Vegon, La Playa, Barrio el Rio, 8 de Diciembre, 23 de enero, Romulo Gallegos, La Tinta, La Popa.
+								<br>·&nbsp;&nbsp; &nbsp;Estado Zulia: La Concepcion, Paraguaipoa, Sinamaica, Curvas de Molina, San Isidro, La Chivucara.
+								<br>PARAGRAFO UNICO: Quedará igualmente a discreción del prestador directo del servicio de auxilio vial (remolque o grúa) prestar sus servicios o no:
+								<br>a)&nbsp;&nbsp; &nbsp;Si al arribar al sitio donde se encuentra el vehículo accidentado el mismo aun se encuentra con carga.
+								<br>b)&nbsp;&nbsp; &nbsp;Si el lugar donde se encuentra el vehículo accidentado es un camino secundario no asfaltado, trocha o camino rural de difícil acceso.
+								<br>c)&nbsp;&nbsp; &nbsp;Si el vehículo se encuentra en zonas militares de acceso restringido que requieran una autorización especial.
+								<br>d)&nbsp;&nbsp; &nbsp;Si el vehículo accidentado se encuentra en una zona de difícil acceso en razón de cortes de vías por protestas, catástrofes naturales, caídas de puentes, derrumbes, o cualquier otra causa similar.
+								<br>En los casos previstos en este parágrafo el prestador directo del servicio de auxilio vial podrá contactar al centro de atención telefónica y solicitar se le reconozca un recargo para prestar el servicio en dichas condiciones el cual no podrá
+								exceder del cien por ciento (100%) del precio aplicable según el baremo para el momento de la prestación del servicio.
+								<br>
+								<br>PAGO
+								<br>Soluciones Tugruero, C.A emitirá los pagos a sus prestadores directos de servicios afiliados dentro de los primeros 15 días hábiles desde el momento en que se reciba la factura emitida de conformidad con los requisitos formales previsto en la
+								legislación tributaria en físico en las oficinas de Soluciones Tugruero, C.A, de parte de sus prestadores directos de servicios.&nbsp;
+								<br>Nuestros prestadores directos de servicios podrán enviar facturas por cada uno de los servicios realizados o acumular&nbsp;&nbsp;los servicios&nbsp;&nbsp;en una sola factura y enviarla cada tanto tiempo éstos quiera
+								<br>Soluciones Tugruero, C.A se reserva el derecho de cancelar cualquier pago, incluso si se ha confirmado previamente por escrito por nosotros, como resultado de la fijación de precios incorrecta o errónea o producto o servicio Descripción u otro
+								error. Si hacemos cancelar un pago, recibirá un reembolso total o un crédito en su caso y usted reconoce y acepta que un reembolso o un crédito es su único remedio.
+								<br>
+								<br>ELEGIBILIDAD
+								<br>Usted puede utilizar el portal TU/GRUERO® sólo si puede adherirse a un contrato vinculante con Soluciones Tugruero, C.A, y sólo por el cumplimiento de este Acuerdo y todas las leyes, normas y regulaciones municipales, nacionales e internacionales
+								aplicables. Se prohíbe cualquier uso o acceso a al portal TU/GRUERO® por cualquier persona menor de 18 años y en violación de este Acuerdo. El portal TU/GRUERO® no está disponible o autorizado para ser usada por cualquier usuario final o prestador
+								directo de servicio retirado de la misma por Soluciones Tugruero, C.A, los usuarios finales o personas que actúen en nombre de una organización o entidad y no en su capacidad personal o individual. Cualquier uso no autorizado está estrictamente
+								prohibido.
+								<br>
+								<br>INDEMNIZACIÓN
+								<br>Usted acepta defender, indemnizar y mantener libre de toda responsabilidad a Soluciones Tugruero, C.A, sus subsidiarias, agentes, representantes, afiliados, empleados, usuarios, contratistas, funcionarios y directores, de y contra cualquier y
+								todo reclamo, daños, obligaciones, pérdidas, responsabilidades, costes o la deuda, y gastos (incluyendo honorarios razonables de abogados) que surjan de: (i) su uso y acceso al portal TU/GRUERO®, el Sitio o los Servicios, incluyendo cualquier
+								dato o contenido transmitido o recibido por usted; (ii) su violación de cualquier término de este Acuerdo, incluyendo, sin limitaciones, su incumplimiento de cualquiera de las declaraciones y garantías anteriores; (iii) su violación de cualquier
+								derecho de terceros, incluyendo sin limitación cualquier derecho de privacidad o derechos de propiedad intelectual; (iv) la violación de cualquier ley, regla o regulación aplicable; (v) cualquier reclamación o daños que surjan como resultado de
+								cualquiera de su Contenido de Usuario o cualquier que se envía a través de su cuenta; (vi) el acceso y utilización del Servicio con su nombre de usuario, contraseña u otro código de seguridad adecuado por terceras partes; o (vii) cualquier y todos
+								los reclamos o daños (supuestos o reales) que surjan como consecuencia de un traslado que Usted proporcione como&nbsp;&nbsp; &nbsp;prestador directo de servicio.
+								<br>
+								<br>LIBERACIÓN
+								<br>En el caso de que usted tenga una disputa con uno o más usuarios finales o con un prestador directo de servicio, usted se compromete a librar de toda responsabilidad a Soluciones Tugruero, C.A (así como a sus funcionarios, directores, agentes,
+								subsidiarias, afiliados, empleados y contratistas) de cualquier y todas las reclamaciones, demandas y daños (emergentes y lucro cesante) de cualquier tipo y naturaleza, conocidos y desconocidos, sospechados e insospechados, previsibles y no previsibles,
+								que surja de o relacionados de alguna manera con dichos conflictos con otros usuarios o con el uso del portal TU/GRUERO® o los Servicios.
+								<br>
+								<br>LIMITACIONES DE LA RESPONSABILIDAD
+								<br>En ningún caso nosotros y nuestros afiliados, accionistas, filiales, funcionarios, directores, empleados, contratistas o nuestros proveedores, será responsable frente a los usuarios finales y/o los prestadores directos de los servicios de auxilio
+								vial ante usted por cualquier daño incidental, consecuente, o indirecto (incluyendo, pero no limitado a, daños por eliminación, corrupción, pérdida de datos, pérdida de programas, imposibilidad de conservación de cualquier información o cualquier
+								otro contenido mantenido o transmitido por nuestros servicios, interrupciones de servicios, o por el costo de la obtención de servicios sustitutos) derivados de o en relación con el portal TU/GRUERO®, nuestros servicios o este acuerdo (que pudiera
+								surgir, incluyendo negligencia) incluso si nosotros o nuestros agentes o representantes sabemos o hemos sido advertidos de la posibilidad de tales daños, no cubrimos ni protegemos a los usuarios finales o prestadores directos de servicios que
+								hacen uso de los servicios en ninguna manera. Por tal motivo, rechazamos expresamente toda responsabilidad por daños, directos, indirectos, incidentales y/o consecuentes, derivados del uso de los servicios, incluyendo, sin limitaciones, daños
+								derivados de la comunicación y/o encuentro con otros usuarios finales o prestadores directos de servicios del portal TU/GRUERO® o los servicios, o presentado a usted a través del portal TU/GRUERO® o los servicios. tales daños incluyen, sin limitarse
+								a, daños físicos, lesiones, muerte y/o la angustia emocional, stress, o algún malestar. Sin perjuicio de lo contrario con respecto a lo contenido en este documento, nuestra responsabilidad, y la responsabilidad de nuestros afiliados, accionistas,
+								filiales, funcionarios, directores, empleados, contratistas y proveedores, ante usted o cualquier tercero en cualquier circunstancia se limita a una cantidad equivalente a trescientas unidades tributarias (300 U.T.) Si se determina que alguna
+								disposición de esta sección pasa a ser inválida o inaplicable, dicha disposición específica no tendrá ninguna fuerza y efecto y será separada, pero el resto de esta sección &nbsp;continuará en pleno vigor y efecto. Ninguna renuncia a cualquier
+								disposición de esta sección &nbsp;será eficaz o ejecutable a menos que sea establecido en un escrito firmado por la parte que renuncia a un derecho o requisito. Su renuncia no dejará de aplicar ni afectar a cualquier otra parte de estas condiciones
+								de usuario. esta sección sobrevivirá a la terminación de estas condiciones de prestadores directos de servicios &nbsp;o su relación con Soluciones Tugruero, C.A.&nbsp;
+								<br>Soluciones Tugruero, C.A no tiene responsabilidad alguna por las acciones o conducta de los prestadores directos de servicios o usuarios finales. Soluciones Tugruero, C.A no tiene obligación de intervenir o participar de alguna manera en las controversias
+								que puedan surgir entre los prestadores directos de servicios, usuarios finales, Pasajeros, o terceros. La responsabilidad por las decisiones que tome en relación con la prestación o aceptación de transporte exclusivamente recae sobre Usted. Es
+								de cada prestador directo de servicio y de cada usuario final, la responsabilidad de tomar precauciones razonables en todas las acciones e interacciones con cualquiera de las partes que pueda interactuar con o a través del uso de los servicios.
+								Soluciones Tugruero, C.A puede, pero no tiene la responsabilidad de examinar o evaluar prestadores directos de servicios &nbsp;o usuarios finales potenciales. Los usuarios entienden y aceptan que Soluciones Tugruero, C.A no tiene control sobre
+								la identidad o la actuación de los prestadores directos de servicios &nbsp;ni de los usuarios finales, por lo que Soluciones Tugruero, C.A le ruega ejercer cautela y buen juicio al usar los servicios. prestadores directos de servicios y usuarios
+								finales utilizan los servicios bajo su propio riesgo.
+								<br>Por favor, tenga en cuenta que Internet es como una gran ciudad con todo tipo de gente en ella. No viaje con alguien que no confía. Al usar este servicio usted acepta que Soluciones Tugruero, C.A, las organizaciones asociadas y los individuos
+								incluyendo proveedores o patrocinadores del servicio de transporte, y personas relacionadas no son responsables de su seguridad, comodidad, o los arreglos de traslado exitosos, o por sus pertenencias, o por cualquier otra responsabilidad en relación
+								a su uso de este sitio web.
+								<br>Soluciones Tugruero, C.A., bajo su propia discreción, podrá tomar las medidas razonables para comprobar los antecedentes de los prestadores directos de servicios &nbsp;mediante el servicio de verificación de antecedentes de un tercero, examinando
+								el registro de los vehículos a motor de los conductores, la validez de la póliza de seguro del automóvil, y la validez de la licencia de conducir. Esto, sin embargo, no debe ser considerado como una garantía, ya sea expresa o implícita, de la
+								seguridad de un traslado, la fiabilidad de un prestador directo de servicio, del traslado o del vehículo del prestador directo de servicio, o cualquier otra cosa, y Soluciones Tugruero, C.A no otorga expresamente garantía alguna en cuanto a los
+								prestadores directos de servicios &nbsp;y usuarios finales. Un usuario final &nbsp;debe tomar todas las medidas razonables para determinar si acepta el traslado ofrecido por un prestador directo de servicio y este prestar el servicio de asistencia
+								vial a un usuario final. Soluciones Tugruero, C.A no se hace responsable por cualquier daño (incluyendo daños personales, muerte, daños materiales, pérdida de tiempo o de los salarios, y similares) como resultado de o en relación con un traslado
+								facilitado por los Servicios, o de resolver cualquier disputa entre usted y otro prestador directo de servicio o usuario final. Usted acepta que su uso de los Servicios es bajo su propio riesgo.
+								<br>
+								<br>EXENTO DE TODA RESPONSABILIDAD POR CONTENIDOS EN LÍNEA (ONLINE)
+								<br>Las opiniones, consejos, declaraciones, ofertas u otra información o contenido disponible a través de los Servicios, pero no directamente por Soluciones Tugruero, C.A, pertenecen a sus respectivos autores y no necesariamente significa que son
+								seguros. Dichos autores son los únicos responsables por tal contenido. Soluciones Tugruero, C.A no garantiza la exactitud, integridad o utilidad de cualquier información sobre los Servicios. Soluciones Tugruero, C.A no adopta, aprueba, ni acepta
+								ninguna responsabilidad por la exactitud o confiabilidad de cualquier opinión, consejo o declaración hecha por partes distintas de las realizadas por Soluciones Tugruero, C.A. En ningún caso será Soluciones Tugruero, C.A responsable de cualquier
+								pérdida o daño que pueda resultar de la confianza de cualquiera en la información u otro contenido publicado en los Servicios, o transmitido a los participantes. Soluciones Tugruero, C.A se reserva el derecho, pero Soluciones Tugruero, C.A no
+								tiene la obligación, de monitorear los materiales publicados en las áreas públicas de los Servicios. A pesar de esto, Usted sigue siendo el único responsable por el contenido de las fotos, perfiles (incluyendo su nombre, la imagen y semejanza),
+								mensajes, notas, texto, información, música, vídeos, anuncios, anuncios y otros contenidos (el "Contenido ") que publique en las áreas públicas de los Servicios y en sus mensajes privados de correo electrónico. Soluciones Tugruero, C.A tendrá
+								el derecho a eliminar cualquier material que, en opinión exclusiva de Soluciones Tugruero, C.A viole, o se alegue que viole la ley o este Acuerdo o que puedan ser ofensivos, ilegales, o que puedan violar los derechos, dañar, o amenazar la seguridad
+								de los usuarios finales prestadores directos de servicios u otros. Correos electrónicos enviados entre usted y otros prestadores directos de servicios o usuarios finales &nbsp;que no son fácilmente accesibles para el público en general, serán
+								tratados por Soluciones Tugruero, C.A como privados en la medida requerida por la ley aplicable.
+								<br>
+								<br>DECLARACIONES DE PRIVACIDAD
+								<br>Le recomendamos que se tome el tiempo de leer sobre nuestra política de privacidad cuidadosamente. Usted debe saber que al aceptar este Acuerdo, usted expresa explícitamente que ha leído la política de privacidad y da consentimiento y está de
+								acuerdo con los términos contenidos en el mismo.
+								<br>Nos preocupamos por la privacidad de nuestros usuarios. Usted entiende que al utilizar los Servicios usted acepta la recopilación, uso y divulgación de su información de identificación personal, su ubicación GPS relativa al lugar de recogida y
+								destino final y datos agregados como se establece en nuestro términos de servicio, y que su información de identificación personal sea recopilada, utilizada, transferida y procesada. Los usuarios finales específicamente acuerdan liberar los datos
+								sobre su historial de traslados de la plataforma TU/GRUERO® a las autoridades gubernamentales que puedan solicitar este tipo de datos a Soluciones TU/GRUERO®.
+								<br>Los usuarios pueden ver tanto la ubicación de recogida como el destino final del otro, la hora estimada de llegada, las calificaciones del conductor, el perfil del conductor, y la información del vehículo, ya sea en persona o en el software. Los
+								usuarios que soliciten los traslados consienten expresamente a que esta información sea revelada a la otra parte.
+								<br>Nosotros, no podemos garantizar que terceros no autorizados no podrán derrotar nuestras medidas de seguridad o utilizar su información personal para fines indebidos. Usted reconoce que usted proporciona su información personal bajo su propio riesgo.
+								<br>
+								<br>SU INFORMACIÓN
+								<br>Su información es cualquier información, incluyendo las fotos que usted provea, publique o exhibida (“Post”) en la plataforma TU/GRUERO® o envíe a otros usuarios en el registro o en cualquier mensaje en área pública (Incluyendo, pero no limitado
+								a la sección comentarios) o a través de cualquier e-mail (su información o notificación). Su información será almacenada en nuestros servidores. Usted nos autoriza a nosotros para usar su información para crear una cuenta de usuario que le permita
+								a usted participar en el servicio. Usted es el único responsable por su información y su interacción con otras personas en el público, y nosotros actuamos como un conducto pasivo para la publicación en línea de su información. Cuando usted usa
+								la plataforma TU/GRUERO®, usted acepta proveer información actualizada y verás para mantener actualizada y completa su información. Usted acepta que nosotros y otras personas del público pueden confiar en su información como verás actualizada
+								y completa. Usted reconoce que si su información no es verdadera, carece de veracidad y no es actualizada o es incompleta en cualquier aspecto nosotros tenemos el derecho de terminar este contrato y el uso de nuestros servicios. Usted también
+								acepta ratificar y mantener nuestra política de privacidad en los términos y condiciones antes descritos.
+								<br>
+								<br>POLITICA DE CERO TOLERANCIA
+								<br>Nosotros, tenemos una política de cero tolerancia para el consumo de alcohol, de sustancias ilegales, o el mal uso de medicamentos con receta al proveer o utilizar los servicios de intermediación que prestamos. Nosotros nos reservamos el derecho
+								suspender permanentemente y terminar este Acuerdo respecto de cualquier prestador directo de los servicios después de una queja presentada por un Usuario final por abuso en el consumo de alcohol, sustancias estupefacientes o cualquier droga controlada.</p>
+
+							<p>
+								<br>SUSPENSIÓN
+								<br>Nosotros nos reservamos el derecho de suspender la prestación de sus servicios a través de nuestro portal y/o app en cualquier momento y por cualquier periodo de tiempo y se reserva el derecho de terminar este acuerdo en los siguientes eventos:
+								(1) el prestador directo de los servicios es imputado de un delito que implique pena privativa de la libertad, incluyendo pero no limitado a, chocar e huir, el uso de un vehículo a motor para cometer un delito, conducir bajo la influencia de drogas
+								y/o alcohol, o cualquier otro delito, incluyendo pero no limitado a, fraude, delitos sexuales, delitos relacionados con las drogas, los delitos relacionados con daño a la propiedad y/o robo, actos de violencia o actos de terrorismo; (2) el prestador
+								directo de los servicios que sea imputado o sancionad administrativamente por conducción temeraria o conducir con una licencia suspendida o revocada; (3) se presente una queja por discriminación contra el prestador directo de los servicios.
+								<br>
+								<br>TERMINACIÓN
+								<br>Este acuerdo surte efectos sobre su uso del sitio web, app o servicios de Soluciones Tugruero, C.A. &nbsp;para los nuevos usuarios y sobre las fechas de cualquier cambio o alteración subsecuente a este acuerdo para todos los usuarios actuales.
+								Usted puede terminar su participación en los servicios de Soluciones Tugruero, C.A. &nbsp;en cualquier momento, por cualquier razón, efectiva tras la recepción por escrito o correo electrónico de la notificación de terminación. Usted puede cancelar
+								su participación en el Software o Servicios de Soluciones Tugruero, C.A. &nbsp; eliminando su información en cualquier momento y por cualquier motivo o sin motivo, sin explicación, efectiva al enviar correo electrónico o por escrito a la otra
+								parte.&nbsp;
+								<br>Si el prestador directo del servicio no cumple con alguno de los términos de este Acuerdo, nosotros nos reservamos el derecho de conservar la información relativa a la infracción, de publicar o divulgar esta información en el perfil en línea,
+								y de suspender o retirar el acceso a nuestro portal y/o app.
+								<br>
+								<br>LEY APLICABLE
+								<br>Este Acuerdo se regirá por la legislación venezolana y la normativa aplicable. Usted acepta someterse a la jurisdicción de los tribunales competentes del País por cualquier acción por la cual Soluciones Tugruero, C.A. &nbsp;Soluciones Tugruero,
+								C.A. &nbsp; se reserva el derecho a ejercer un mandato judicial o cualquier otro remedio en los tribunales competentes para evitar la violación o el intento de violación, apropiación indebida o violación de unos de nuestros derechos de autor,
+								marcas, secretos comerciales, patentes, u otros derechos de propiedad intelectual o de propiedad, como se establece en la disposición de Arbitraje continuación.
+								<br>
+								<br>CONDUCTA DEL USUARIO
+								<br>Usted como usuario final &nbsp;es el único responsable de la información, datos, textos, mensajes u otros materiales ("Contenido ") que usted cargue, publique, o muestre (en adelante, "Suba") o por correo electrónico o cualquier otro uso a través
+								del Servicio. Soluciones Tugruero, C.A. &nbsp;se reserva el derecho de investigar y tomar las medidas legales contra cualquiera que, a la sola discreción de Soluciones Tugruero, C.A., viole esta disposición, incluyendo sin limitación, la eliminación
+								de los contenidos ofensivos del servicio, suspender o terminar la cuenta de dichos usuarios y presentar informes sobre usted a las autoridades policiales.&nbsp;
+								<br>Usted acepta en no hacer uso del servicio para:
+								<br>·&nbsp;&nbsp; &nbsp;Hacerse pasar por otra persona o entidad, o declarar falsamente o tergiversar su afiliación con una persona o entidad;
+								<br>·&nbsp;&nbsp; &nbsp;“Acechar" o acosar a cualquier persona;
+								<br>·&nbsp;&nbsp; &nbsp;Solicitar información personal de cualquier persona menor de 18 años;
+								<br>·&nbsp;&nbsp; &nbsp;Recoger o recolectar direcciones de correo electrónico u otra información de contacto de los usuarios del servicio, por medios electrónicos o de otro tipo, con el fin de enviar correos electrónicos y otras comunicaciones no
+								solicitadas;
+								<br>·&nbsp;&nbsp; &nbsp;Anunciar u ofrecer a la venta o a la compra cualquier producto o servicio para cualquier fin comercial que no esté autorizado;
+								<br>·&nbsp;&nbsp; &nbsp;Impulsar o promover cualquier actividad o empresa delictiva o proporcionar instrucciones sobre actividades ilegales;
+								<br>·&nbsp;&nbsp; &nbsp;Obtener o intentar acceder o de otro modo obtener cualquier material o información mediante cualquier medio que no sea intencionalmente puesto disponible o previsto a través del Servicio; o
+								<br>·&nbsp;&nbsp; &nbsp;Enviar un correo electrónico o de otra manera cargar/subir (“Upload”) cualquier contenido que (i) infrinja cualquier propiedad intelectual u otros derechos de propiedad de cualquier parte; (ii) usted no tenga derecho a cargar/subir
+								(“Upload)” bajo ninguna ley o bajo ninguna relación contractual o fiduciaria; (iii) contenga virus de software o cualquier otro código informático, archivos o programas diseñados para interrumpir, destruir o limitar la funcionalidad de cualquier
+								software o hardware o equipo de telecomunicaciones; (iv) plantee o cree un riesgo para la privacidad o la seguridad de cualquier persona; (v) constituya publicidad no solicitada o no autorizada, materiales promocionales, actividades y/o ventas,
+								"correo basura", "spam", "cartas en cadena", "esquemas piramidales", "concursos", "sorteos", o cualquier otra forma de solicitación; (vi) sea ilegal, dañino, amenazador, abusivo, acosador, agraviante, excesivamente violento, difamatorio, vulgar,
+								obsceno, pornográfico, calumnioso, invasivo de la privacidad de otro, de odio racial, étnico u objetable de cualquier otra forma; o (vii)que a nuestro juicio razonablemente, sea inaceptable ya que podría restringir o inhibir a cualquier otra persona
+								de usar o disfrutar del servicio, o que pueda exponer a Soluciones Tugruero, C.A. &nbsp; o sus usuarios a cualquier daño o responsabilidad de cualquier tipo; interferir o interrumpir el Servicio, servidores, o redes conectadas al Servicio, o incumplir
+								los requisitos, procedimientos, políticas o regulaciones de las redes conectadas al Servicio; o violar cualquier ley aplicable ya sea local, estatal, provincial, nacional o internacional , o cualquier regulación con fuerza de ley.
+								<br>·&nbsp;&nbsp; &nbsp;Simular la ocurrencia de un siniestro, ocultar, tergiversar o simular sus circunstancias de tiempo y lugar, la identificación del/los vehículo (s) y/o persona (s) involucrados en los mismos.
+								<br>Usted (usuario final) está de acuerdo en abstenerse a mostrar, distribuir, otorgar licencia, realizar, publicar, reproducir, duplicar, copiar, crear trabajos derivados de, modificar, vender, revender, explotar, transferir o cargar/subir con fines
+								comerciales, cualquier parte de los Servicios, el uso de los Servicios, o el acceso a los Servicios.
+								<br>Usted acepta que utilizará los Servicios de forma compatible con cualquiera y todas las leyes y reglamentos aplicables. Nos reservamos el derecho, pero no estamos obligados a, investigar y poner fin a su participación en la Plataforma TU/GRUERO®
+								si usted ha hecho uso malicioso o fraudulento de la Plataforma TU/GRUERO® (portal/app) o de los Servicios, o se ha comportado de una manera que podría considerarse como no apropiado o cuya conducta es ilícita o ilegal.&nbsp;
+								<br>Particularidades del Servicio de Taxi.
+								<br>Nosotros, &nbsp;proveeremos a través de tercero el servicio de taxis a todos los usuarios finales indicados por la respectiva compañía de seguros con la que tengan contratada la póliza de seguros con cobertura de asistencia vial, siempre y cuando
+								este igualmente vigente un contrato de servicios entre nosotros y la respectiva compañía de seguros y de conformidad con la base de datos que dicha compañía de seguros nos suministre o sus sucesivas actualizaciones para cualquier servicio de grúas
+								solicitado por éstos, bajo las siguientes condiciones:
+								<br>·&nbsp;&nbsp; &nbsp;Por cada solicitud de servicio de auxilio vial (grúa), el accidentado podrá solicitar a Soluciones Tugruero, C.A. &nbsp;un Taxi tipo sedán cuatro (4) puertas con capacidad para cuatro (4) pasajeros (uno &nbsp;trasladado en
+								el asiento de copiloto y tres trasladados en los asientos traseros del vehículo)
+								<br>·&nbsp;&nbsp; &nbsp;En el vehículo accidentado del cliente asegurado se encuentran dos (2) o más personas (acompañantes). Hasta tres (3) acompañantes.
+								<br>·&nbsp;&nbsp; &nbsp;En el vehículo accidentado del cliente asegurado se encuentran uno (1) o más niños menores a 10 años.
+								<br>·&nbsp;&nbsp; &nbsp;No se garantiza el transporte de valijas, maletas, cajas u otros artículos más allá de la capacidad normal del maletero del taxi.
+								<br>·&nbsp;&nbsp; &nbsp;No se transportaran sustancias toxicas, inflamables, corrosivas, explosivas, radioactivas o de modo alguno peligrosas.
+								<br>·&nbsp;&nbsp; &nbsp;Quedará a discreción del taxista el transporte de mascotas.
+								<br>·&nbsp;&nbsp; &nbsp;Quedará a discreción del taxista el transporte de personas que requieran servicios de ambulancia por su condición de salud.
+								<br>.
+								<br>El usuario final será quien de forma directa e intransferible solicitará a Soluciones Tugruero, C.A. &nbsp;la prestación del servicio de auxilio vial y/o taxi cuando este ultimo aplique ante la ocurrencia de un siniestro que le impida al vehículo
+								amparado por la póliza vigente emitida por la compañía de seguros afiliada a nuestros servicios transitar de forma segura. La solicitud deberá inicialmente realizarla a través de un equipo electrónico o dispositivo móvil con la capacidad y &nbsp;características
+								técnicas adecuadas para el correcto funcionamiento de la app. Al momento de realizar la solicitud del servicio el usuario final deberá responder un cuestionario de preguntas, a los fines de determinar su identidad, así como las características
+								del vehículo accidentado y su afiliación (vigencia de la cobertura) información esta que se cotejará con la última actualización disponible de la base de datos de usuarios finales suministrada por la correspondiente compañía de seguros. En caso
+								de negativa del usuario final a suministrar la información solicitada o la misma sea suministrada de forma insuficiente, errónea o fraudulenta Soluciones Tugruero, C.A. &nbsp;negará la solicitud de prestación del servicio.
+								<br>a)&nbsp;&nbsp; &nbsp;El usuario final al hacer uso del call center deberá suministrar la información necesaria para su plena identificación y constatación de su condición como afiliado en la base de datos suministrada por la respectiva compañía
+								de seguros al operador del centro de atención telefónica. el usuario final deberá aceptar que la conversación telefónica realizada al centro de atención telefónica pueda ser grabada. &nbsp;&nbsp;
+								<br>b)&nbsp;&nbsp; &nbsp;El usuario final deberá dirigirse al operador del centro de atención telefónica en un tono de voz &nbsp;adecuado y &nbsp;respetuoso. En caso que el usuario final insulte, amenace o de alguna manera agreda verbalmente al operador
+								del centro de atención telefónica este podrá discrecionalmente negar la prestación del servicio.&nbsp;
+								<br>c)&nbsp;&nbsp; &nbsp;El usuario final o el conductor y pasajeros del vehículo siniestrado de no ser los mismos deberán identificarse apropiadamente con el prestador del servicio de auxilio vial (remolque vehicular o grúa) y/o taxi mediante los
+								documentos adecuados (cedula de identidad, pasaporte, autorización o poder para conducir el vehículo en caso de pertenecer a persona jurídica). Así mismo, el usuario final o el conductor del vehículo siniestrado deberán firmar el formato del comprobante
+								de haber recibido la prestación del servicio que les presente el prestador del servicio de auxilio vial (remolque vehicular o grúa) y/o taxi.
+								<br>
+								<br>POLITICA DE CERO TOLERANCIA
+								<br>El usuario final se compromete a reportar a Soluciones Tugruero, C.A. &nbsp;a la brevedad posible de cualquier prestador directo de los servicios sospechoso de violar nuestra política de cero tolerancia en el uso de drogas y alcohol llamando a
+								nuestro call center.
+								<br>
+								<br>SANCIONES PARA ACTOS FRAUDULENTOS DE LOS USUARIOS FINALES
+								<br>* Un acto fraudulento en un mismo año (póliza anual) acarrea una sanción de bloqueo en la plataforma TU/GRUERO® de 30 días continuos (hasta el momento de la renovación de su póliza).&nbsp;&nbsp;
+								<br>* Dos actos fraudulentos (seguidos o no seguidos) en un mismo año suscrito (póliza anual) acarrearán una sanción de bloqueo&nbsp;&nbsp;en la plataforma TU/GRUERO® de 180 días continuos (hasta el momento de la renovación de su póliza).&nbsp;&nbsp;
+								<br>* Tres actos fraudulentos (seguidos o no seguidos) en un mismo año suscrito (póliza anual) acarrearán una sanción de bloqueo definitiva en la plataforma TU/GRUERO® (hasta el momento de la renovación de su póliza).&nbsp;
+								<br>Nuestros proveedores no están obligados a esperar por la descarga de la carga de los vehículos que la tengan. Los usuarios que tengan dichos vehículos en esa condición deben garantizar la descarga de la mercancía de sus vehículos antes del arribo
+								del prestador directo de los servicios de asistencia vial. Si solicitan el servicio, y el prestador directo de los servicios de asistencia vial llega y el vehículo tiene aun carga se considerará como Acto Fraudulento. Pero será discrecional del
+								prestador directo de los servicios de asistencia vial si esperar a que descarguen la carga o irse.&nbsp;
+								<br>Nuestros prestadores directos de los servicios de asistencia vial (incluidos taxistas) no están obligados a permanecer con el usuario final una vez que este haya llegado al destino.
+								<br>
+								<br>INFORMACIÓN DE COOKIES:
+								<br>Cuando Usted visita Nuestro Servicio o sitio web, Nosotros podemos enviar una o varias cookies – Las cookies son pequeños archivos de texto que almacenan en su navegador o sitio web los sitios web, las aplicaciones, los medios en línea y los anuncios
+								– a Su computadora que de forma exclusiva identifica su navegador y permite que TU/GRUERO® lo ayude a Usted iniciar sesión rápidamente y mejorar Su navegación a través de nuestro sitio web. De la misma manera, una cookie nos puede proporcionar
+								información sobre cómo Usted utiliza los servicios (por ejemplo, los sitios web que visita, los enlaces que utiliza y otras acciones que Usted realice en el Servicio), y nos permite, así como a nuestros socios comerciales, el seguimiento de su
+								uso de los Servicios con el tiempo. Una cookie persistente sobrevive en su navegador incluso después que usted lo cierra. Las cookies persistentes pueden ser utilizadas por su navegador en visitas posteriores al sitio. Las cookies persistentes
+								pueden ser eliminadas siguiendo las instrucciones de su navegador de Internet. Una cookie de sesión es aquella que es temporal y se elimina automáticamente una vez que cierra su navegador. Usted puede configurar su navegador para rechazar todas
+								las cookies o indicar cuando una cookie está siendo enviada. Sin embargo, algunas funciones del Servicio puede que no operen correctamente si se encuentra deshabilitada la aceptación de las cookies.
+								<br>
+								<br>IDENTIFICADORES DE DISPOSITIVO:
+								<br>Cuando Usted accede a nuestro Servicio por o a través de un dispositivo móvil (lo que incluye y no se limita teléfonos inteligentes o tabletas), Nosotros podemos acceder, recopilar, monitorear y/o almacenar de forma remota uno o más "identificadores
+								de dispositivos”, como un identificador único universal ("UUID"). Identificadores de dispositivos son pequeños archivos de datos o estructuras de datos similares almacenados en o asociados con Su dispositivo móvil, que identifica de forma única
+								Su dispositivo móvil. Un identificador de dispositivo puede ser los datos almacenados en relación con el hardware del dispositivo, datos almacenados en relación con el sistema del dispositivo operativo u otro software, o datos enviados al dispositivo
+								por TU/GRUERO®. Un identificador de dispositivo puede proporcionarnos información sobre cómo Usted navega y utiliza los Servicios. Un identificador de dispositivo puede permanecer en su dispositivo, para ayudarle a conectarse más rápido y mejorar
+								Su navegación a través de los Servicios. Puede que alguna de las funciones de los Servicios no operen correctamente si el uso o la disponibilidad de identificadores de dispositivos se encuentren deteriorados o deshabilitados.
+								<br>
+								<br>INFORMACIÓN DE UBICACIÓN:
+								<br>Cuando usted accede a los servicios por o a través de un dispositivo móvil, Nosotros podemos acceder, recopilar, monitorear y/o remotamente almacenar "datos de localización", que puede incluir coordenadas GPS (por ejemplo, latitud y/o longitud)
+								o información similar acerca de la ubicación de Su dispositivo móvil. Los datos de localización pueden proporcionarnos información sobre cómo Usted navega y utiliza los Servicios. Algunas funciones de los servicios, en particular los servicios
+								de localización, pueden no funcionar de manera correcta si el uso o la disponibilidad de los datos de localización se encuentran deteriorados o deshabilitados. Si usted está viajando en un vehículo, recopilaremos la información de la geolocalización
+								del usuario final a través del dispositivo móvil del conductor. Debido a que usted está viajando en el vehículo, esto también significa que Nosotros vamos a recoger de manera indirecta la información de su ubicación.
+								<br>
+								<br>COMUNICACIONES COMERCIALES Y DE MERCADEO/MARKETING:
+								<br>Utilizamos la información que recopilamos o recibimos para comunicarnos directamente con Usted. Podremos enviarle mensajes electrónicos que contengan información de su interés como boletines de noticias, encuestas, promociones y ofertas especiales
+								como consecuencia de la autorización expresa que usted ha proporcionado en la aceptación de los Términos y Condiciones. Si Usted no desea recibir este tipo de mensajes de correo electrónico, Usted tiene la opción de optar por no recibir o cambiar
+								Sus preferencias. Asimismo, utilizamos Su información para enviarle mensajes de correo electrónico relacionados con el Servicio (por ejemplo, verificación de la cuenta, confirmación de compra y facturación, y recordatorios, cambios/actualizaciones
+								a las funciones del servicio, avisos técnicos y de seguridad). Usted no tiene la opción de optar por no recibir correos electrónicos relacionados con el Servicio.
+								<br>
+								<br>USO DE LA APLICACIÓN MÓVIL:
+								<br>Al usar la aplicación móvil de TU/GRUERO®, podemos recopilar y procesar datos técnicos incluyendo el ID de Su dispositivo o la dirección de computador o laptop, la dirección IP, y cierta información sobre el fabricante, el modelo y el sistema
+								operativo de Su dispositivo móvil. Esta información es utilizada para garantizar la funcionalidad de la aplicación móvil.
+								<br>
+								<br>CREACIÓN DE CUENTA:
+								<br>Al registrarse como nuevo usuario, podemos recopilar información tal como su nombre, correo electrónico, país, idioma, contraseña, número de teléfono móvil, dirección IP, podemos usar su información de contacto para enviarle un correo electrónico
+								de bienvenida, para verificar su nombre de usuario y contraseña, para comunicarnos con usted en respuesta a sus inquietudes y consultas, y enviarle anuncios relacionados con el servicio, como por ejemplo, si nuestro servicio ha sido suspendido
+								temporalmente por mantenimiento. A los efectos de verificar su estado de usuario final o prestador directo de servicios de auxilio vial y realizar una verificación de antecedentes, podemos recopilar información con respecto a la licencia de conducir
+								del usuario o prestador directo del servicio; marca del vehículo, modelo y año; información de registro del automóvil; póliza de seguro del automóvil, o cualquier otra información relacionada que nos pueda ser necesaria para completar con éxito
+								el proceso de verificación del usuario final o el prestador directo del servicio y el proceso de verificación de antecedentes cuando aplique.
+								<br>
+								<br>RESOLUCION DE CONFLICTOS CON LOS USUAURIOS FINALES.
+								<br>Sin menoscabo de las previsiones sobre limitaciones o exclusiones de responsabilidad previstas en este documento para la resolución de toda controversia entre nosotros y uno o más usuarios finales que emerja con ocasión y/o sea relativa al presente
+								contrato (de ahora en lo adelante referida como el “Conflicto”) se dejara a la elección de las partes de someter sus diferencias al procedimiento de conciliación ante el Centro Empresarial de Conciliación y Arbitraje Comercial &nbsp;(también conocido
+								como CEDCA por su siglas en español) que se regirá por las leyes de la República Bolivariana de Venezuela y por los estatutos de CEDCA, procediéndose previo común acuerdo.
+								<br>En caso que las partes no resuelvan acudir a la instancia de conciliación &nbsp;o en el caso que ellas &nbsp;hubieren sometido el conflicto a la conciliación pero esta no hubiere sido exitosa, las partes acuerdan someter la solución de sus conflictos
+								a los siguientes mecanismos:
+								<br>i)&nbsp;&nbsp; &nbsp;En caso que el conflicto no sea de una cuantía que exceda las DIEZ MIL UNIDADES TRIBUTARIAS (10.000 U.T.) conforme a su valor vigente el día previo a la presentación de cualquier demanda, las partes acuerda que podrán acudir
+								a los Tribunales de la Jurisdicción Ordinaria y escogen como domicilio especial, exclusivo y excluyente a la ciudad de Caracas, Distrito Capital, Republica Bolivariana de Venezuela.
+								<br>ii)&nbsp;&nbsp; &nbsp; En caso que el conflicto sea por un monto que exceda DIEZ MIL UNIDADES TRIBUTARIAS (10.000 U.T.) conforme a su valor vigente el día previo a la presentación de cualquier demanda, las partes acuerdan someter la resolución
+								final del conflicto a un arbitraje. Las partes acuerdan que el arbitraje se desarrollara en la ciudad de Caracas, Republica Bolivariana de Venezuela en la sede principal del CEDCA, y sometido a las leyes de la Republica Bolivariana de Venezuela
+								y a las previsiones del reglamento del CEDCA. El arbitraje se realizara en Español (Castellano) sin menoscabo que las partes puedan presentar pruebas (evidencias) en otro idioma siempre y cuando la hagan traducir por interprete público. Queda
+								expresamente entendido que los árbitros podrán dictar medidas cautelares. La sentencia arbitral será motivada y será el objeto de la presentación previa prevista en los Estatutos.&nbsp;
+								<br>iii)&nbsp;&nbsp; &nbsp;Cuando la cuantía del conflicto sometido al arbitraje tenga un monto que no exceda de CINCUENTA MIL UNIDADES TRIBUTARIAS (50.000 U.T.), conforme a su valor vigente el día previo a la presentación de la demanda se seguirá
+								el procedimiento sumario o expedito previstos en los reglamentos o estatutos del CEDCA y el tribunal arbitral será constituido por un único arbitro. Cuando se refiera a un conflicto que exceda de la cantidad antes mencionada el arbitraje se realizara
+								conforme al procedimiento ordinario previsto en los reglamentos o estatutos del CEDCA y el tribunal arbitral estará constituido por tres (3) árbitros. La elección de los árbitros se realizara de conformidad con los reglamentos o estatutos del
+								CEDCA.
+								<br>
+								<br>2016 TU/GRUERO®. Todos los Derechos Reservados.</p>
+						</div>
+					</div>
+
+					<div class="grid grid-pad urow uib_row_89 row-height-89" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_132 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_192 btn-base boton-base-texto btn-aceptar" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-legal-next">Cerrar</button>
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+					<div class="widget uib_w_193 scale-image abajo-anclado" id="scroller" data-uib="media/img" data-ver="0">
+						<figure class="figure-align">
+							<img src="images/SVGs/Scroll.svg">
+
+							<figcaption data-position="bottom"></figcaption>
+						</figure>
+					</div>
+				</div>
+
+				<div class="upage-content ac0 content-area vertical-col left hidden" id="datos_inicio">
+					<div class="widget uib_w_5 subtitulos-text subtitulo-margen alto-subtitulos" data-uib="media/text" data-ver="0">
+						<div class="widget-container left-receptacle"></div>
+						<div class="widget-container right-receptacle"></div>
+						<div>
+							<p>Ingrese sus datos</p>
+						</div>
+					</div>
+
+					<div class="well no_wrap  widget uib_w_6 d-margins well-sm" data-uib="twitter%20bootstrap/well" data-ver="1">
+						<div class="col uib_col_4 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+
+								<div class="input-group label-textos ancho-inputs input-margen input-padd">
+
+									<label class="narrow-control label-inline" for="cedula">C.I. / Rif</label>
+									<div class="input-group-btn">
+										<button class="btn dropdown-toggle btn-primary" data-toggle="dropdown" id="tipoID">V <span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu">
+											<li><a href="javascript:cambiarId('V');">V</a>
+											</li>
+											<li><a href="javascript:cambiarId('E');">E</a>
+											</li>
+											<li><a href="javascript:cambiarId('J');">J</a>
+											</li>
+											<li><a href="javascript:cambiarId('P');">P</a>
+											</li>
+											<li><a href="javascript:cambiarId('G');">G</a>
+											</li>
+										</ul>
+									</div>
+
+									<input class="wide-control form-control default" type="tel" placeholder="ej. 0123456789" id="cedula">
+
+								</div>
+
+								<!--<div class="table-thing widget uib_w_7 label-textos ancho-inputs input-margen" data-uib="twitter%20bootstrap/input" data-ver="1">
+<span class="input-group-addon" id="tipoID">V</span>
+									<label class="narrow-control label-inline" for="cedula">C.I. Titular</label>
+									<input class="wide-control form-control default" type="tel" placeholder="ej. 0123456789" id="cedula">
+								</div>
+                                -->
+
+								<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+									<label class="narrow-control label-inline" for="placa">Placa</label>
+									<input class="wide-control form-control default" type="text" placeholder="ej. ABCD000" id="placa">
+								</div>
+
+								<div class="table-thing widget label-textos ancho-inputs d-margins input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+									<label class="narrow-control label-inline" for="clave">Clave</label>
+									<input class="wide-control form-control default" type="password" placeholder="ej. 1234ABC" id="clave">
+									<div class="input-group-btn">
+										<button class="btn widget btn-mapa" id="btn-clave"><i class="icon icon-clave" data-position="right"></i>
+										</button>
+									</div>
+								</div>
+
+								<!--<div class="table-thing widget uib_w_10 label-textos ancho-inputs input-margen input-padd" data-uib="twitter%20bootstrap/select" data-ver="1">
+									<label class="narrow-control label-inline">Seguro</label>
+									<select class="wide-control form-control default input-lg" id="seguro">
+										<option>-</option>
+										<option>Banesco</option>
+										<option>Mercantil</option>
+										<option>Vitalicia</option>
+										<option>Previsora</option>
+									</select>
+								</div>-->
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="grid urow uib_row_5 grid-pad rest-of-height" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_8 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+
+					<div class="grid grid-pad urow uib_row_53" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_91 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_11 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-enviar">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								</button><span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+				</div>
+				<div id="home_grua" class="upage-content vertical-col left hidden">
+					<div class="well no_wrap  widget uib_w_183 d-margins well-lg" data-uib="twitter%20bootstrap/well" data-ver="1">
+						<div class="col uib_col_128 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<div class="tarea widget uib_w_184 subtitulos-text" data-uib="media/text" data-ver="0" name="uib_w_184" id="nombre-gruero">
+									<div class="widget-container left-receptacle"></div>
+									<div class="widget-container right-receptacle"></div>
+									<div class="text-container">
+										<p>Nombre</p>
+									</div>
+								</div>
+
+								<div class="grid urow uib_row_88 row-height-88" data-uib="layout/row" data-ver="0">
+									<div class="col uib_col_129 col-0_4-12" data-uib="layout/col" data-ver="0">
+										<div class="widget-container content-area vertical-col">
+											<div class="tarea widget uib_w_185 Datos-Grua" data-uib="media/text" data-ver="0" name="uib_w_185">
+												<div class="widget-container left-receptacle"></div>
+												<div class="widget-container right-receptacle"></div>
+												<div class="text-container">
+
+													<p style="text-align:right;">Placa:</p>
+													<p style="text-align:right;">Tipo de grúa:</p>
+													<p style="text-align:right;">Teléfono:</p>
+
+												</div>
+											</div><span class="uib_shim"></span>
+										</div>
+									</div>
+									<div class="col uib_col_130 col-0_8-12" data-uib="layout/col" data-ver="0">
+										<div class="widget-container content-area vertical-col">
+											<div class="tarea widget uib_w_186 Par-Grua" data-uib="media/text" data-ver="0" name="uib_w_186" id="datos-grua">
+												<div class="widget-container left-receptacle"></div>
+												<div class="widget-container right-receptacle"></div>
+												<div class="text-container">
+													<p>ALX900</p>
+
+													<p>Gancho</p>
+
+													<p>04120000000</p>
+												</div>
+											</div>
+											<span class="uib_shim"></span>
+										</div>
+									</div>
+
+									<span class="uib_shim"></span>
+								</div>
+
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+					</div>
+					<div class="tarea widget uib_w_187 subtitulos-text alto-subtitulos" data-uib="media/text" data-ver="0" name="uib_w_187">
+						<div class="widget-container left-receptacle"></div>
+						<div class="widget-container right-receptacle"></div>
+						<div class="text-container">
+							<p>¿Disponible?</p>
+						</div>
+					</div>
+					<div class="grid grid-pad urow uib_row_11 row-height-11" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_25 col-0_6-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col center" id="SI-btn">
+								<button class="btn widget uib_w_17 d-margins inicio-redondo btn-base sino-btn" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-select" value="SI" color="rgba(0, 204, 0, 0.8)">Si</button><span class="uib_shim"></span>
+							</div>
+						</div>
+						<div class="col uib_col_26 col-0_6-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col center" id="NO-btn">
+								<button class="btn widget uib_w_18 d-margins inicio-redondo sino-btn btn-base" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-select" value="NO" color="rgba(204, 0, 0, 0.8)">NO</button><span class="uib_shim"></span>
+							</div>
+						</div>
+
+						<span class="uib_shim"></span>
+					</div>
+					<div class="tarea widget uib_w_187 subtitulos-text alto-subtitulos" data-uib="media/text" data-ver="0" name="uib_w_187">
+						<div class="widget-container left-receptacle"></div>
+						<div class="widget-container right-receptacle"></div>
+						<div class="text-container">
+							<p>Seleccione su ubicación</p>
+						</div>
+					</div>
+                    <div class="table-thing widget uib_w_110 d-margins label-textos ancho-inputs input-padd" data-uib="twitter%20bootstrap/select" data-ver="1">
+									
+                    <select class="wide-control form-control default input-lg" id="input-estado" onchange="setEstado(this)" disabled="">
+                                        <option value="Distrito capital">Distrito Capital</option>
+										<option value="Amazonas">Amazonas</option>
+										<option value="Anzoátegui">Anzoátegui</option>
+										<option value="Apure">Apure</option>
+										<option value="Aragua">Aragua</option>
+										<option value="Barinas">Barinas</option>
+										<option value="Bolívar">Bolívar</option>
+										<option value="Carabobo">Carabobo</option>
+										<option value="Cojedes">Cojedes</option>
+										<option value="Delta amacuro">Delta amacuro</option>
+										<option value="Falcón">Falcón</option>
+										<option value="Guárico">Guárico</option>
+										<option value="Lara">Lara</option>
+										<option value="Mérida">Mérida</option>
+										<option value="Miranda">Miranda</option>
+										<option value="Monagas">Monagas</option>
+										<option value="Nueva esparta">Nueva esparta</option>
+										<option value="Portuguesa">Portuguesa</option>
+										<option value="Sucre">Sucre</option>
+										<option value="Táchira">Táchira</option>
+										<option value="Trujillo">Trujillo</option>
+										<option value="Vargas">Vargas</option>
+										<option value="Yaracuy">Yaracuy</option>
+										<option value="Zulia">Zulia</option>  
+                    </select>
+                    </div><span class="uib_shim"></span>
+	
+					<div class="grid grid-pad urow uib_row_54 rest-of-height" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_92 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+
+					<div class="grid grid-pad urow uib_row_55" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_93 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_19 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-disponible-next" disabled="disabled">Solicitudes <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								</button>
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+				</div>
+				<div id="solicitudes_grua" class="upage-content vertical-col left hidden">
+
+					<div class="tarea widget uib_w_188 subtitulos-text alto-subtitulos" data-uib="media/text" data-ver="0" name="uib_w_188">
+						<div class="widget-container left-receptacle"></div>
+						<div class="widget-container right-receptacle"></div>
+						<div class="text-container">
+							<p>Solicitudes</p>
+						</div>
+					</div>
+					<div class="well no_wrap widget sol-well alto-sol well-sm" data-uib="twitter%20bootstrap/well" data-ver="1" id="solwell0" name="sol">
+						<div class="col uib_col_131 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col left">
+								<div>
+									<button class="btn widget uib_w_190 btn-opcion btn-sol boton-sol ancho-sol" data-uib="twitter%20bootstrap/button" data-ver="1" mid="0" onclick="MostrarSolicitud(this)" id="sol00">Corolla - Neumáticos.
+										<br>11:35 AM - 23/01/2016</button>
+								</div>
+								<div>
+									<button class="btn widget uib_w_216 ancho-sol-remove solicitud-custom btn-mapa" data-uib="twitter%20bootstrap/button" data-ver="1" mid="0" onclick="RemoveList(0)"><i class="icon icon-problema" data-position="icon only"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="well no_wrap  widget sol-well alto-sol well-sm" data-uib="twitter%20bootstrap/well" data-ver="1" id="solwell1" name="sol">
+						<div class="col uib_col_131 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col left">
+								<div>
+									<button class="btn widget uib_w_190 btn-opcion btn-sol boton-sol ancho-sol" data-uib="twitter%20bootstrap/button" data-ver="1" mid="1" onclick="MostrarSolicitud(this)" id="sol01">Corolla - Neumáticos.
+										<br>11:35 AM - 23/01/2016</button>
+								</div>
+								<div>
+									<button class="btn widget uib_w_216 ancho-sol-remove solicitud-custom btn-mapa" data-uib="twitter%20bootstrap/button" data-ver="1" mid="1" onclick="RemoveList(1)"><i class="icon icon-problema" data-position="icon only"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="well no_wrap  widget sol-well alto-sol well-sm" data-uib="twitter%20bootstrap/well" data-ver="1" id="solwell2" name="sol">
+						<div class="col uib_col_131 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col left">
+								<div>
+									<button class="btn widget uib_w_190 btn-opcion btn-sol boton-sol ancho-sol" data-uib="twitter%20bootstrap/button" data-ver="1" mid="2" onclick="MostrarSolicitud(this)" id="sol02">Corolla - Neumáticos
+										<br>11:35 AM - 23/01/2016</button>
+								</div>
+								<div>
+									<button class="btn widget uib_w_216 ancho-sol-remove solicitud-custom btn-mapa" data-uib="twitter%20bootstrap/button" data-ver="1" mid="2" onclick="RemoveList(2)"><i class="icon icon-problema" data-position="icon only"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="well no_wrap  widget sol-well alto-sol well-sm" data-uib="twitter%20bootstrap/well" data-ver="1" id="solwell3" name="sol">
+						<div class="col uib_col_131 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col left">
+								<div>
+									<button class="btn widget uib_w_190 btn-opcion btn-sol boton-sol ancho-sol" data-uib="twitter%20bootstrap/button" data-ver="1" mid="3" onclick="MostrarSolicitud(this)" id="sol03">Corolla - Neumáticos
+										<br>11:35 AM - 23/01/2016</button>
+								</div>
+								<div>
+									<button class="btn widget uib_w_216 ancho-sol-remove solicitud-custom btn-mapa" data-uib="twitter%20bootstrap/button" data-ver="1" mid="3" onclick="RemoveList(3)"><i class="icon icon-problema" data-position="icon only"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="well no_wrap  widget sol-well alto-sol well-sm" data-uib="twitter%20bootstrap/well" data-ver="1" id="solwell4" name="sol">
+						<div class="col uib_col_131 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col left">
+								<div>
+									<button class="btn widget uib_w_190 btn-opcion btn-sol boton-sol ancho-sol" data-uib="twitter%20bootstrap/button" data-ver="1" mid="4" onclick="MostrarSolicitud(this)" id="sol04">Corolla - Neumáticos
+										<br>11:35 AM - 23/01/2016</button>
+								</div>
+								<div>
+									<button class="btn widget uib_w_216 ancho-sol-remove solicitud-custom btn-mapa" data-uib="twitter%20bootstrap/button" data-ver="1" mid="4" onclick="RemoveList(4)"><i class="icon icon-problema" data-position="icon only"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="sol_resumen" class="upage-content vertical-col left hidden">
+					<div class="tarea widget uib_w_194 subtitulos-text alto-subtitulos" data-uib="media/text" data-ver="0" name="uib_w_194">
+						<div class="widget-container left-receptacle"></div>
+						<div class="widget-container right-receptacle"></div>
+						<div class="text-container">
+							<p>Resumen de solicitud</p>
+						</div>
+					</div>
+					<div class="well no_wrap  widget uib_w_195 well-lg" data-uib="twitter%20bootstrap/well" data-ver="1" id="resumen-sol">
+						<div class="col uib_col_133 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<div class="sbs-container widget  estilo-lado datos-margen" data-uib="layout/side_by_side" data-ver="0">
+									<div class="leftContent widget-container">
+										<div class="tarea widget uib_w_223 Datos-Grua datos-margen" data-uib="media/text" data-ver="0" name="uib_w_223">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>Monto:&nbsp;</p>
+											</div>
+										</div>
+									</div>
+									<div class="rightContent widget-container">
+										<div class="tarea widget uib_w_224 Par-Grua" data-uib="media/text" data-ver="0" name="uib_w_224">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>NAN.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="sbs-container widget  estilo-lado datos-margen" data-uib="layout/side_by_side" data-ver="0">
+									<div class="leftContent widget-container">
+										<div class="tarea widget uib_w_223 Datos-Grua datos-margen" data-uib="media/text" data-ver="0" name="uib_w_223">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>Modelo:&nbsp;</p>
+											</div>
+										</div>
+									</div>
+									<div class="rightContent widget-container">
+										<div class="tarea widget uib_w_224 Par-Grua" data-uib="media/text" data-ver="0" name="uib_w_224">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>NAN.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="sbs-container widget  estilo-lado datos-margen" data-uib="layout/side_by_side" data-ver="0">
+									<div class="leftContent widget-container">
+										<div class="tarea widget uib_w_223 Datos-Grua datos-margen" data-uib="media/text" data-ver="0" name="uib_w_223">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>Problema:&nbsp;</p>
+											</div>
+										</div>
+									</div>
+									<div class="rightContent widget-container">
+										<div class="tarea widget uib_w_224 Par-Grua" data-uib="media/text" data-ver="0" name="uib_w_224">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>NAN.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="sbs-container widget  estilo-lado datos-margen" data-uib="layout/side_by_side" data-ver="0">
+									<div class="leftContent widget-container">
+										<div class="tarea widget uib_w_223 Datos-Grua datos-margen" data-uib="media/text" data-ver="0" name="uib_w_223">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>Origen:&nbsp;</p>
+											</div>
+										</div>
+									</div>
+									<div class="rightContent widget-container">
+										<div class="tarea widget uib_w_224 Par-Grua" data-uib="media/text" data-ver="0" name="uib_w_224">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container" id="show-mapa">
+												<p>Ver mapa.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="sbs-container widget  estilo-lado datos-margen" data-uib="layout/side_by_side" data-ver="0">
+									<div class="leftContent widget-container">
+										<div class="tarea widget uib_w_223 Datos-Grua datos-margen" data-uib="media/text" data-ver="0" name="uib_w_223">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>Destino:&nbsp;</p>
+											</div>
+										</div>
+									</div>
+									<div class="rightContent widget-container">
+										<div class="tarea widget uib_w_224 Par-Grua" data-uib="media/text" data-ver="0" name="uib_w_224">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>NAN.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="sbs-container widget  estilo-lado datos-margen" data-uib="layout/side_by_side" data-ver="0">
+									<div class="leftContent widget-container">
+										<div class="tarea widget uib_w_223 Datos-Grua datos-margen" data-uib="media/text" data-ver="0" name="uib_w_223">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>Referencia:&nbsp;</p>
+											</div>
+										</div>
+									</div>
+									<div class="rightContent widget-container">
+										<div class="tarea widget uib_w_224 Par-Grua" data-uib="media/text" data-ver="0" name="uib_w_224">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div class="text-container">
+												<p>NAN.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+					</div>
+					<div class="grid grid-pad urow uib_row_96" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_144 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_201 botones-detalle-texto btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="show-mapa">Mapa</button><span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+
+					<div class="grid grid-pad urow uib_row_91 rest-of-height" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_136 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+
+					<div class="grid grid-pad urow uib_row_97" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_145 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_213 botones-detalle-texto margen-detalles btn-sm btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-tomar">Aceptar solicitud</button><span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+
+					<div class="grid grid-pad urow uib_row_98" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_146 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_217 botones-detalle-texto Pie-boton2 btn-sm btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="back-sol-btn">Seguir esperando</button>
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+
+				</div>
+				<div id="direcciones" class="upage-content vertical-col left hidden">
+					<div class="widget maps-size rest-of-height mapa-margen map-restore" data-uib="media/google_maps" data-ver="0" data-rpath="null" id="mapdirecciones"></div>
+
+					<button class="btn widget uib_w_142 d-margins overlay trayecto-centrado btn-mapa float-overlay-2" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-localizar" value="Origen" mapa="mapaDir"><i class="icon icon-carro" data-position="icon only"></i>
+					</button>
+					<button class="btn widget uib_w_143 d-margins overlay trayecto-centrado btn-mapa float-overlay-3 btn-lg" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-localizar" value="Destino" mapa="mapaDir"><i class="icon icon-desitno" data-position="icon only"></i>
+					</button>
+
+					<!--<button class="btn widget uib_w_143 d-margins overlay trayecto-centrado btn-mapa float-overlay-3 btn-lg" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-localizar" value="Grua" mapa="mapaDir"><i class="icon icon-grua" data-position="icon only"></i>
+					</button>-->
+
+					<span class="uib_shim"></span>
+
+					<div class="grid grid-pad urow uib_row_93" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_139 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_208 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="regresar-btn">Regresar</button>
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+				</div>
+				<div id="en_ruta" class="upage-content vertical-col left hidden">
+					<div class="widget maps-size rest-of-height mapa-margen map-restore" data-uib="media/google_maps" data-ver="0" data-rpath="null" id="maparuta"></div>
+
+					<div class="grid urow uib_row_41 float-colapse gruero-pad colapse-altura" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_76 col-0" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<div class="panel widget uib_w_136 panel-warning" data-uib="twitter%20bootstrap/collapsible" data-ver="1" id="grua-resumen">
+									<div class="panel-heading">
+										<button class="btn widget btn-resumen-ancho btn-resumen-txt btn-opcion btn-sm" data-uib="twitter%20bootstrap/button" data-ver="1" data-toggle="collapse" href="#bs-accordion-group-3" data-parent="#null" id="btn-show-gura">Resumen de solicitud <i class="icon icon-mostrar"></i>
+										</button>
+
+									</div>
+									<div id="bs-accordion-group-3" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="col uib_col_77 single-col" data-uib="layout/col" data-ver="0">
+												<div class="widget-container content-area vertical-col">
+													<div class="grid urow uib_row_42 row-height-42" data-uib="layout/row" data-ver="0">
+														<div class="col uib_col_78 col-1_4-12" data-uib="layout/col" data-ver="0">
+															<div class="widget-container content-area vertical-col">
+																<div class="widget uib_w_139 d-margins reumen-txt" data-uib="media/text" data-ver="0">
+																	<div class="widget-container left-receptacle"></div>
+																	<div class="widget-container right-receptacle"></div>
+																	<div>
+																		<p>Precio:</p>
+																		<p>Cliente:</p>
+																		<p>Modelo:</p>
+																		<p>Placa:</p>
+																		<p>Problema:</p>
+																		<p>Comentarios:</p>
+																	</div>
+																</div>
+																<span class="uib_shim"></span>
+															</div>
+														</div>
+														<div class="col uib_col_80 col-1_8-12" data-uib="layout/col" data-ver="0">
+															<div class="widget-container content-area vertical-col">
+																<div class="widget uib_w_140 d-margins datos-resumen" data-uib="media/text" data-ver="0" name="datos-servicio">
+																	<div class="widget-container left-receptacle"></div>
+																	<div class="widget-container right-receptacle"></div>
+																	<div>
+																		<p>NAN.</p>
+																		<p>NAN.</p>
+																		<p>NAN.</p>
+																		<p>NAN.</p>
+																		<p>NAN.</p>
+																		<p>NAN.</p>
+																	</div>
+																</div>
+																<span class="uib_shim"></span>
+															</div>
+														</div>
+
+														<span class="uib_shim"></span>
+													</div>
+
+													<div class="widget uib_w_141 grua-texto" data-uib="media/text" data-ver="0">
+														<div class="widget-container left-receptacle"></div>
+														<div class="widget-container right-receptacle"></div>
+														<div>
+															<p>Contacta al cliente</p>
+														</div>
+													</div>
+													<button class="btn widget uib_w_138 llamar-texto btn-sm btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-call-cliente" name="btn-llamar" onclick="llamarCliente()"><i class="icon icon-llamar button-icon-left" data-position="left"></i>0414-000.00.00</button>
+													<span class="uib_shim"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+
+						<span class="uib_shim"></span>
+					</div>
+					<button class="btn widget d-margins overlay trayecto-centrado btn-mapa float-btn-2" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-localizar" value="Origen" mapa="mapaRuta"><i class="icon icon-carro" data-position="icon only"></i>
+					</button>
+					<button class="btn widget d-margins overlay trayecto-centrado btn-lg btn-mapa float-btn-1" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-localizar" value="Destino" mapa="mapaRuta"><i class="icon icon-desitno" data-position="icon only"></i>
+					</button>
+					<!--<button class="btn widget d-margins overlay trayecto-centrado btn-lg btn-mapa float-btn-3" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-localizar" value="Grua" mapa="mapaRuta"><i class="icon icon-grua" data-position="icon only"></i>
+					</button>-->
+
+					<div class="grid urow uib_row_104 botones-padd" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_152 col-0_5-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_144 boton-base-doble btn-lg btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-abandonar">Abandonar</button><span class="uib_shim"></span>
+							</div>
+						</div>
+						<div class="col uib_col_153 col-0_7-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_145 boton-base-doble btn-lg btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-asistir">Encontré al cliente</button><span class="uib_shim"></span>
+							</div>
+						</div>
+
+						<span class="uib_shim"></span>
+					</div>
+				</div>
+
+				<div id="a_destino" class="upage-content vertical-col left hidden">
+					<div class="widget maps-size rest-of-height mapa-margen map-restore" data-uib="media/google_maps" data-ver="0" data-rpath="null" id="mapadestino"></div>
+					<div class="grid urow uib_row_41 float-colapse gruero-pad colapse-altura" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_76 col-0" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<div class="panel widget uib_w_136 panel-warning" data-uib="twitter%20bootstrap/collapsible" data-ver="1" id="grua-resumen">
+									<div class="panel-heading">
+										<button class="btn widget btn-resumen-ancho btn-resumen-txt btn-opcion btn-sm" data-uib="twitter%20bootstrap/button" data-ver="1" data-toggle="collapse" href="#bs-accordion-group-4" data-parent="#null" id="btn-show-gura">Resumen de solicitud <i class="icon icon-mostrar"></i>
+										</button>
+
+									</div>
+									<div id="bs-accordion-group-4" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="col uib_col_77 single-col" data-uib="layout/col" data-ver="0">
+												<div class="widget-container content-area vertical-col">
+													<div class="grid urow uib_row_42 row-height-42" data-uib="layout/row" data-ver="0">
+														<div class="col uib_col_78 col-1_4-12" data-uib="layout/col" data-ver="0">
+															<div class="widget-container content-area vertical-col">
+																<div class="widget uib_w_139 d-margins reumen-txt" data-uib="media/text" data-ver="0">
+																	<div class="widget-container left-receptacle"></div>
+																	<div class="widget-container right-receptacle"></div>
+																	<div>
+																		<p>Precio:</p>
+																		<p>Cliente:</p>
+																		<p>Modelo:</p>
+																		<p>Placa:</p>
+																		<p>Problema:</p>
+																		<p>Comentarios:</p>
+																	</div>
+																</div>
+																<span class="uib_shim"></span>
+															</div>
+														</div>
+														<div class="col uib_col_80 col-1_8-12" data-uib="layout/col" data-ver="0">
+															<div class="widget-container content-area vertical-col">
+																<div class="widget uib_w_140 d-margins datos-resumen" data-uib="media/text" data-ver="0" name="datos-servicio">
+																	<div class="widget-container left-receptacle"></div>
+																	<div class="widget-container right-receptacle"></div>
+																	<div>
+																		<p>NAN.</p>
+																		<p>NAN.</p>
+																		<p>NAN.</p>
+																		<p>NAN.</p>
+																		<p>NAN.</p>
+																		<p>NAN.</p>
+																	</div>
+																</div>
+																<span class="uib_shim"></span>
+															</div>
+														</div>
+
+														<span class="uib_shim"></span>
+													</div>
+
+													<div class="widget uib_w_141 grua-texto" data-uib="media/text" data-ver="0">
+														<div class="widget-container left-receptacle"></div>
+														<div class="widget-container right-receptacle"></div>
+														<div>
+															<p>Contacta al cliente</p>
+														</div>
+													</div>
+													<button class="btn widget uib_w_138 llamar-texto btn-sm btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-call-cliente" name="btn-llamar" onclick="llamarCliente()"><i class="icon icon-llamar button-icon-left" data-position="left"></i>0414-000.00.00</button>
+													<span class="uib_shim"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+
+						<span class="uib_shim"></span>
+					</div>
+
+					<!--<button class="btn widget uib_w_142 d-margins overlay trayecto-centrado btn-mapa float-overlay-2" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-localizar" value="Grua" mapa="mapaDestino"><i class="icon icon-grua" data-position="icon only"></i>
+					</button>-->
+					<button class="btn widget uib_w_143 d-margins overlay trayecto-centrado btn-mapa btn-lg float-overlay-3" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-localizar" value="Destino" mapa="mapaDestino"><i class="icon icon-desitno" data-position="icon only"></i>
+					</button>
+
+					<span class="uib_shim"></span>
+
+					<div class="grid grid-pad urow uib_row_93" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_139 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget  btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-fin-servicio" disabled="disabled">Completado</button>
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+				</div>
+				<div id="abandono" class="upage-content vertical-col left hidden">
+					<div class="tarea widget uib_w_209 subtitulos-text alto-subtitulos" data-uib="media/text" data-ver="0" name="uib_w_209">
+						<div class="widget-container left-receptacle"></div>
+						<div class="widget-container right-receptacle"></div>
+						<div class="text-container">
+							<p>¿Por qué usted abandonó?</p>
+						</div>
+					</div>
+
+					<div class="well no_wrap  widget uib_w_210 d-margins well-sm" data-uib="twitter%20bootstrap/well" data-ver="1">
+						<div class="col uib_col_141 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_85 btn-opcion-text btn-opcion opcion-txt opciones-margen" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-opcion" value="Problemas personales"><i class="icon icon-opcion button-icon-left" data-position="left"></i>Problemas personales.</button>
+								<button class="btn widget uib_w_86 btn-opcion btn-opcion-text opcion-txt" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-opcion" value="Problemas con la grúa"><i class="icon icon-opcion button-icon-left" data-position="left"></i>Problemas con la grúa.</button>
+								<button class="btn widget uib_w_87 btn-opcion btn-opcion-text opcion-txt" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-opcion" value="Otro"><i class="icon icon-opcion button-icon-left" data-position="left"></i>Otro.</button>
+
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="grid grid-pad urow uib_row_94 rest-of-height" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_142 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+
+					<div class="grid grid-pad urow uib_row_95" data-uib="layout/row" data-ver="0">
+						<div class="col uib_col_143 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<button class="btn widget uib_w_211 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-fin-abandonar">Finalizar</button>
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+						<span class="uib_shim"></span>
+					</div>
+				</div>
+
+				<div class="modal outer-element uib_w_13" data-uib="twitter%20bootstrap/modal" data-ver="1" data-backdrop="static" id="popupInico">
+					<div class="modal-dialog">
+						<div class="modal-content">
+
+							<div class="modal-body">
+								<div class="col uib_col_9 single-col" data-uib="layout/col" data-ver="0">
+									<div class="widget-container content-area vertical-col">
+										<div class="widget uib_w_15 Alerta-size" data-uib="media/img" data-ver="0">
+											<figure class="figure-align">
+												<img src="images/SVGs/Stop.svg" id="iconoPop">
+
+												<figcaption data-position="bottom"></figcaption>
+											</figure>
+										</div>
+										<div class="widget uib_w_14 mensaje-textos mensajes-margen" data-uib="media/text" data-ver="0" id="mensajePop">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div>
+												<p>Vacio.</p>
+											</div>
+										</div>
+										<div class="progress full-width-widget widget uib_w_14 d-margins active progress-striped" data-uib="twitter%20bootstrap/progress_bar" data-ver="1">
+											<div class="progress-bar" style="width: 100%;"></div>
+										</div>
+										<button class="btn widget  d-margins boton-base-texto btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="Btn-modal">Button</button>
+										<span class="uib_shim"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="modal-footer">
+								<button class="btn btn-default" type="button">Aceptar</button>
+								<button class="btn btn-danger" type="button">Cancelar</button>
+								<button class="btn btn-success" type="button">Continuar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="fondoDiv hidden" id="menu-closer">
+
+				</div>
+
+				<div class="inner-element uib_w_226 uib_sidebar rightbar bar-bg bar-gutter" data-uib="layout/right_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':210, 'side':'right', 'dur':200}" id="menu-bar">
+
+					<div class="sidebar-content content-area vertical-col">
+
+						<div class="grid grid-pad urow uib_row_102 row-height-102" data-uib="layout/row" data-ver="0" id="tope">
+							<div class="col uib_col_150 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+
+									<span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
+
+						<div class="grid grid-pad urow uib_row_103 row-height-103 menu-bg rest-of-height" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_151 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+									<button class="btn widget uib_w_229 Menu-btn btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="cerrar-sesion"><i class="icon icon-keys button-icon-left" data-position="left"></i>Cerrar sesión</button>
+									<button class="btn widget uib_w_228 Menu-btn btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="call-center"><i class="icon icon-callcenter button-icon-left" data-position="left"></i>Soporte técnico</button>
+									<button class="btn widget uib_w_230 d-margins btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="verificar-servicio"><i class="icon icon-sinconexion button-icon-left" data-position="left"></i>Verificar servicio</button>
+									<button class="btn widget uib_w_231 d-margins btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="verificar-abandono"><i class="icon icon-otra-falla button-icon-left" data-position="left"></i>Verificar abandono</button>
+									<span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+
+</html>
