@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "5e323976-18ce-4f39-a284-5523b18ba09c",
-      "lastModifiedDate": 1485976626817,
+      "lastModifiedDate": 1492881811214,
       "creationDate": 1448648554959
     },
     "XDK-app-designer": "true",
@@ -210,10 +210,10 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "6.2.0",
-        "appVersion_": "1.1.1",
+        "appVersion_": "1.1.2",
         "appAuthor_": "Agroup",
         "appDescription_": "Aplicación de asistencia vehicular.",
-        "appVersionCode_": "6",
+        "appVersionCode_": "7",
         "crosswalkVersion_": "19"
       },
       "iOS": {

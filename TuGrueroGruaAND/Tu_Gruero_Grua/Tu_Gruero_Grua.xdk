@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "b155465a-475e-41b1-aead-c4f07930e29a",
-      "lastModifiedDate": 1483011291488,
+      "lastModifiedDate": 1492882163385,
       "creationDate": 1456503797442
     },
     "XDK-app-designer": "true",
@@ -76,15 +76,15 @@
         "gitref": "",
         "name": "Splashscreen",
         "description": "Cordova Splashscreen Plugin",
-        "checksum": "b3ad230b",
+        "checksum": "47137083",
         "cordovaVersion": ">=3.0.0"
       },
       {
         "id": "phonegap-plugin-push",
         "name": "PushPlugin",
         "version": "1.4.3",
-        "originType": "local",
-        "origin": "./plugins/phonegap-plugin-push",
+        "originType": "cordova.io",
+        "origin": "phonegap-plugin-push",
         "gitref": "",
         "paramvals": {},
         "sourceLocation": "plugins/phonegap-plugin-push",
@@ -106,19 +106,20 @@
         },
         "description": "\n\t\tThis plugin allows your application to receive push notifications on Android, iOS, WP8 and Windows8 devices.\n    Android uses Google Cloud Messaging.\n    iOS uses Apple APNS Notifications.\n    WP8 uses Microsoft MPNS Notifications.\n    Windows8 uses Microsoft WNS Notifications.\n\t",
         "data": {},
-        "dependedBy": []
+        "dependedBy": [],
+        "custom": "true"
       },
       {
         "id": "cordova-plugin-mauron85-background-geolocation",
         "name": "CDVBackgroundGeoLocation",
         "version": "0.9.4",
-        "originType": "local",
-        "origin": "./plugins/cordova-plugin-mauron85-background-geolocation",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-mauron85-background-geolocation",
         "gitref": "",
         "paramvals": {},
         "sourceLocation": "plugins/cordova-plugin-mauron85-background-geolocation",
         "selectedState": "Included",
-        "checksum": "94b381bb",
+        "checksum": "93521684",
         "dependsOn": [],
         "topLevel": true,
         "cordovaVersion": ">=3.0.0",
@@ -173,7 +174,7 @@
         "selectedState": "Included",
         "checksum": "77b7c7b6",
         "dependsOn": [],
-        "topLevel": false,
+        "topLevel": true,
         "permissions": {
           "android:name": [
             "android.permission.WRITE_EXTERNAL_STORAGE"
@@ -300,10 +301,10 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "5.4.1",
-        "appVersion_": "1.1.0",
+        "appVersion_": "1.1.1",
         "appAuthor_": "Agroup",
         "appDescription_": "Aplicación de asistencia vehicular",
-        "appVersionCode_": "3",
+        "appVersionCode_": "4",
         "crosswalkVersion_": "19"
       },
       "iOS": {
