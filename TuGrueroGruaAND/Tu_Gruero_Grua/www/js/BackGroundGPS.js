@@ -150,7 +150,7 @@ function StopGPS() {
 
 
 function GPS(data) {
-	var mURL = "http://52.25.178.106/grueroapp/gpsGrua.php";
+	var mURL = "http://tugruero.com/grueroapp/gpsGrua.php";
 	gruaParam.Lat = data.latitude;
 	gruaParam.Lng = data.longitude;
 	localStorage['gruaParam'] = JSON.stringify(gruaParam);

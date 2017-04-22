@@ -463,7 +463,7 @@ function LoginGrua() {
 function AjaxCall(URL, parametros, exito, fallo, extra) {
 	console.log(extra);
 	jqxhr = $.ajax({
-		url: "http://52.25.178.106/grueroapp/" + URL,
+		url: "http://tugruero.com/grueroapp/" + URL,
 		type: "POST",
 		data: JSON.stringify(parametros),
 		dataType: "JSON",
@@ -849,7 +849,7 @@ function MostrarSolicitud(boton) {
 
 	/*
 	jqxhr = $.ajax({
-		url: "http://52.25.178.106/grueroapp/verSolicitud.php",
+		url: "http://tugruero.com/grueroapp/verSolicitud.php",
 		type: "POST",
 		data: JSON.stringify(parametros),
 		dataType: "JSON",
@@ -1031,7 +1031,7 @@ function TomarServicio() {
 
 	/*
 	jqxhr = $.ajax({
-		url: "http://52.25.178.106/grueroapp/tomarSolicitud.php",
+		url: "http://tugruero.com/grueroapp/tomarSolicitud.php",
 		type: "POST",
 		data: JSON.stringify(parametros),
 		dataType: "JSON",
@@ -1415,7 +1415,7 @@ function Finalizador() {
 
 	/*
 	jqxhr = $.ajax({
-		url: "http://52.25.178.106/grueroapp/finalizarServicio.php",
+		url: "http://tugruero.com/grueroapp/finalizarServicio.php",
 		type: "POST",
 		data: JSON.stringify(parametros),
 		dataType: "JSON",
