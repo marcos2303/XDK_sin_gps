@@ -867,7 +867,7 @@ function MostrarSolicitud(boton) {
 	});
 */
 
-	var param = {
+	/*var param = {
 		"popup": "popupInico",
 		"imagen": "Conectando",
 		"mensaje": "Obteniendo más datos de la solicitud, Por favor espere mientras se completa el proceso.",
@@ -875,7 +875,7 @@ function MostrarSolicitud(boton) {
 		"displaysBotones": ['none', 'none', 'none', 'none'],
 		"text": ['', '', '', ''],
 		"onClick": ["", "", "", ""]
-	};
+	};*/
 
 	genericPop(param);
 }
