@@ -329,7 +329,7 @@ function AjaxCall(URL, parametros, exito, fallo, extra) {
 	console.log("NewAJAx");
 
 	jqxhr = $.ajax({
-		url: "http://52.25.178.106/clienteapp/" + URL,
+		url: "http://tugruero.com/clienteapp/" + URL,
 		type: "POST",
 		data: JSON.stringify(parametros),
 		dataType: "JSON",
